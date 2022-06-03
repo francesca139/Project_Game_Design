@@ -2115,7 +2115,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2139,7 +2139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.0773608, y: -0, z: -0, w: 0.99700314}
-  m_LocalPosition: {x: 0, y: 10.04, z: -38.61}
+  m_LocalPosition: {x: 0, y: 17.4, z: -97.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4236,7 +4236,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d7660f9e7c3124c259f6b2aeee9f448c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4867,7 +4867,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022720928}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 69ff8785360d444e886b924ef1060570, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
