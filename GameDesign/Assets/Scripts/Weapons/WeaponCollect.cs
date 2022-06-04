@@ -11,7 +11,9 @@ public class WeaponCollect : MonoBehaviour
         if (wi != null)
         {
             wi.WeaponCollected(gameObject);
+
             gameObject.SetActive(false);
+          
 
             Debug.Log("WEAPON COLLECTED!");
         }

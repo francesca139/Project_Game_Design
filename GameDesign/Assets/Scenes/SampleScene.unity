@@ -759,7 +759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4115b1dd5f75f45d19b6e05274f2ece6, type: 3}
       propertyPath: m_TagString
-      value: Mazza
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4115b1dd5f75f45d19b6e05274f2ece6, type: 3}
@@ -2264,7 +2264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf2d515ebe7b8348ad3c0c521de359d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneString: 
+  nextSceneString: Fairy
 --- !u!1001 &892333674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3855,7 +3855,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561104621}
-  m_LocalRotation: {x: -0.000000020489091, y: 0.000000011175868, z: -0.000000010360961, w: 1}
+  m_LocalRotation: {x: -0.000000042840824, y: 0.00000009685751, z: -0.000000045751204, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4426,7 +4426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf2d515ebe7b8348ad3c0c521de359d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneString: 
+  nextSceneString: Fairy
 --- !u!1001 &1731025222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4953,7 +4953,7 @@ GameObject:
   - component: {fileID: 1907335031}
   m_Layer: 0
   m_Name: Mazza
-  m_TagString: Untagged
+  m_TagString: Mazza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

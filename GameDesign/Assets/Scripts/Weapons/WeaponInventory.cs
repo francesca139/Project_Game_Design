@@ -42,12 +42,15 @@ public class WeaponInventory : MonoBehaviour
         bool already = false;
         for (int i = 0; i < weapons.Count; i++)
         {
-            if (weapons[i].tag == go.tag)
+            if (weapons[i].name == go.name)
                 already = true;
         }
 
         if (!already)
         {
+            if(go.tag == "Mazza")
+                 go.GetComponent<BatMovement>().enabled = false;
+
             weapons.Add(go);
             weaponAvailable.Add(true);
 
@@ -66,8 +69,8 @@ public class WeaponInventory : MonoBehaviour
             {
                 weaponOnHand.SetActive(true);
                 weapons[currentWeapon].SetActive(true);
-
-                weapons[currentWeapon].transform.position = weaponPosition;
+                weaponPosition = weaponOnHand.transform.position;
+                weapons[currentWeapon].transform.position = weaponOnHand.transform.position;
 
                 canChange = true;
             }
@@ -81,7 +84,8 @@ public class WeaponInventory : MonoBehaviour
 
         if (canChange && weapons.Count > 1)
         {
-            if (Input.GetAxis("Mouse ScrollWheel") > 0f || Input.GetAxis("Mouse ScrollWheel") < 0f)
+            //  if (Input.GetAxis("Mouse ScrollWheel") > 0f || Input.GetAxis("Mouse ScrollWheel") < 0f)
+            if(Input.GetMouseButtonDown(2))
             {
                 Debug.Log("Change weapon");
 
