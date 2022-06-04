@@ -19,12 +19,24 @@ public class Movement : MonoBehaviour
     public Transform groundCheck;
     public float jumpHeight;
 
+   // private static bool exists;  //da usare per i portali
+
     // Start is called before the first frame update
     void Start()
     {
         myRB = GetComponent<Rigidbody>();
         myAnim = GetComponent<Animator>();
         facingRight = true;
+
+     /*   if (!exists)
+        {
+            exists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        } */  //aggiunto per il passaggio tra i mondi
     }
 
     // Update is called once per frame

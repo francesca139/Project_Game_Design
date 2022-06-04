@@ -755,11 +755,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4115b1dd5f75f45d19b6e05274f2ece6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4115b1dd5f75f45d19b6e05274f2ece6, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Mazza
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4115b1dd5f75f45d19b6e05274f2ece6, type: 3}
@@ -4953,7 +4953,7 @@ GameObject:
   - component: {fileID: 1907335031}
   m_Layer: 0
   m_Name: Mazza
-  m_TagString: Mazza
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5281,6 +5281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 1230351958}
+  weaponAvailable: 
   weaponOnHand: {fileID: 629339959}
   OnWeaponCollected:
     m_PersistentCalls:

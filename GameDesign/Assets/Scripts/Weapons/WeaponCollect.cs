@@ -6,17 +6,21 @@ public class WeaponCollect : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        WeaponInventory wi = other.GetComponent<WeaponInventory>();
-
-        if (wi != null)
+        if (other.tag == "Player")
         {
-            wi.WeaponCollected(gameObject);
+            WeaponInventory wi = other.GetComponent<WeaponInventory>();
+            if (wi != null)
+            {
+                wi.WeaponCollected(gameObject);
 
-            gameObject.SetActive(false);
-          
+                //  gameObject.SetActive(false);
+                Destroy(transform.root.gameObject);
 
-            Debug.Log("WEAPON COLLECTED!");
+
+                Debug.Log("WEAPON COLLECTED!");
+            }
         }
     }
 }
+
 

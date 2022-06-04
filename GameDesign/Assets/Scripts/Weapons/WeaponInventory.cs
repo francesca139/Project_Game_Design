@@ -6,11 +6,11 @@ using UnityEngine.Events;
 public class WeaponInventory : MonoBehaviour
 {
     public List<GameObject> weapons;
-    List<bool> weaponAvailable;
+    public List<bool> weaponAvailable;
     public GameObject weaponOnHand;
 
     int currentWeapon;
-    
+
     Vector3 weaponPosition;
 
     bool canChange;
@@ -20,49 +20,45 @@ public class WeaponInventory : MonoBehaviour
         weapons = new List<GameObject>();
         weaponAvailable = new List<bool>();
 
-        weaponOnHand.SetActive(false);
+        weaponOnHand.SetActive(true);
         weaponPosition = weaponOnHand.transform.position;
 
-        //dal momento che il personaggio ha già in mano la pistola
+        //introduco già i gameobjects nell'inventario
         GameObject pistola = GameObject.FindGameObjectWithTag("Pistola");
         weapons.Add(pistola);
         weaponAvailable.Add(true);
 
-        canChange = false;
+        GameObject mazza = GameObject.FindGameObjectWithTag("Mazza");
+        weapons.Add(mazza);
+        weaponAvailable.Add(false);
+        weapons[weapons.Count - 1].SetActive(false); //il personaggio ha in mano la pistola all'inizio
+
+        canChange = true;
         currentWeapon = 0;
-     
 
     }
 
-    
+
 
     public UnityEvent<WeaponInventory> OnWeaponCollected;
     public void WeaponCollected(GameObject go)
-    {    
-        bool already = false;
+    {
         for (int i = 0; i < weapons.Count; i++)
         {
-            if (weapons[i].name == go.name)
-                already = true;
+            if (weapons[i].CompareTag(go.name))
+                weaponAvailable[i] = true;
+
         }
 
-        if (!already)
-        {
-            if(go.tag == "Mazza")
-                 go.GetComponent<BatMovement>().enabled = false;
+        Debug.Log("Another one collected");
 
-            weapons.Add(go);
-            weaponAvailable.Add(true);
+        OnWeaponCollected.Invoke(this);
 
-            Debug.Log("Another one collected");
-
-            OnWeaponCollected.Invoke(this);
-        }
     }
 
     void Update()
     {
-         weaponPosition = weaponOnHand.transform.position;
+        weaponPosition = weaponOnHand.transform.position;
         if (weapons.Count > 0)
         {
             if (Input.GetMouseButtonDown(0))
@@ -70,7 +66,7 @@ public class WeaponInventory : MonoBehaviour
                 weaponOnHand.SetActive(true);
                 weapons[currentWeapon].SetActive(true);
                 weaponPosition = weaponOnHand.transform.position;
-                weapons[currentWeapon].transform.position = weaponOnHand.transform.position;
+                weapons[currentWeapon].transform.position = weaponPosition;
 
                 canChange = true;
             }
@@ -84,8 +80,7 @@ public class WeaponInventory : MonoBehaviour
 
         if (canChange && weapons.Count > 1)
         {
-            //  if (Input.GetAxis("Mouse ScrollWheel") > 0f || Input.GetAxis("Mouse ScrollWheel") < 0f)
-            if(Input.GetMouseButtonDown(2))
+            if (Input.GetMouseButtonDown(2))
             {
                 Debug.Log("Change weapon");
 
