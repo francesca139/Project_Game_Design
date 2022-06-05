@@ -8,6 +8,7 @@ TagManager:
   - Pistola
   - Mazza
   - Enemy
+  - EmptyHand
   layers:
   - Default
   - TransparentFX
