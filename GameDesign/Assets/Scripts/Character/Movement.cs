@@ -42,7 +42,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(grounded && Input.GetAxis("Jump") > 0)
+        if(grounded && Input.GetButton("Jump"))
         {
             grounded = false;
             myAnim.SetBool("grounded", grounded);

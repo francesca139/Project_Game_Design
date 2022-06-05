@@ -23,7 +23,18 @@ public class WeaponInventory : MonoBehaviour
         weaponOnHand.SetActive(true);
         weaponPosition = weaponOnHand.transform.position;
 
-        //introduco già i gameobjects nell'inventario
+        // Commento: lui parte disarmato, quindi si potrebbe modificare la lista weapon come segue
+        // - weapon[0] --> disarmato (stato iniziale)
+        // - weapon[1] --> bastone 
+        // - weapon[2] --> pistola
+
+        // Quando l'utente clicca sulla casella relativa avviene un
+        // weapons[1].SetActive(true) e tutti gli altri passano a false,
+        // per? pi? che metterlo nello Start bisognerebbe inserirlo in una
+        // Update o FixedUpdate, per controllare costantemente il valore
+        // del trigger
+
+        //introduco gi? i gameobjects nell'inventario
         GameObject pistola = GameObject.FindGameObjectWithTag("Pistola");
         weapons.Add(pistola);
         weaponAvailable.Add(true);
@@ -31,6 +42,7 @@ public class WeaponInventory : MonoBehaviour
         GameObject mazza = GameObject.FindGameObjectWithTag("Mazza");
         weapons.Add(mazza);
         weaponAvailable.Add(false);
+
         weapons[weapons.Count - 1].SetActive(false); //il personaggio ha in mano la pistola all'inizio
 
         canChange = true;
@@ -39,9 +51,9 @@ public class WeaponInventory : MonoBehaviour
     }
 
 
-
     public UnityEvent<WeaponInventory> OnWeaponCollected;
     public void WeaponCollected(GameObject go)
+
     {
         for (int i = 0; i < weapons.Count; i++)
         {
