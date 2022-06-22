@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657958, g: 0.4964128, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465791, g: 0.49641228, b: 0.57481587, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -197,6 +197,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -520,6 +524,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &21009448 stripped
@@ -842,6 +850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &29006164 stripped
@@ -1163,6 +1175,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (60)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -1796,6 +1812,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &70854853 stripped
@@ -1977,6 +1997,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &90366899 stripped
@@ -2109,6 +2133,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -2284,6 +2312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (91)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &105789666 stripped
@@ -2418,6 +2450,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d971e06094b8088489e35afcc0ac7918, type: 3}
       propertyPath: m_Name
       value: Tronco1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d971e06094b8088489e35afcc0ac7918, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1913270399329770295, guid: d971e06094b8088489e35afcc0ac7918, type: 3}
       propertyPath: m_Layer
@@ -2960,6 +2996,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &158373122 stripped
@@ -3210,6 +3250,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &179753291 stripped
@@ -3309,6 +3353,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -3882,6 +3930,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (61)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &213876275 stripped
@@ -3981,6 +4033,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (74)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -4155,6 +4211,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -4640,6 +4700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (85)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &284996182 stripped
@@ -4813,6 +4877,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -5528,6 +5596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (83)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &360937923 stripped
@@ -5627,6 +5699,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -5801,6 +5877,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a8328e92d1789504e9e447a5981a7241, type: 3}
   m_PrefabInstance: {fileID: 394042612}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &394449980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c545fff076954e40a6c60de71668d74, type: 3}
+  m_PrefabInstance: {fileID: 1884552673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &394449981
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394449980}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.51267
+  m_Center: {x: 0.14531982, y: -0.38392776, z: 0}
 --- !u!1001 &402901113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6023,6 +6117,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -6590,6 +6688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &447010829 stripped
@@ -6841,6 +6943,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &467719368 stripped
@@ -7088,6 +7194,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -7401,6 +7511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (93)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &514336837 stripped
@@ -7648,6 +7762,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (71)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -8155,6 +8273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &557587430 stripped
@@ -8379,15 +8501,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4f1b148380a924157955918c05844150, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.98
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4f1b148380a924157955918c05844150, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4668
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4f1b148380a924157955918c05844150, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.65
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4f1b148380a924157955918c05844150, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9179,7 +9301,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundCheck: {fileID: 1576465128}
-  jumpHeight: 100
+  jumpHeight: 80
 --- !u!136 &628020485
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9765,6 +9887,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &681266001 stripped
@@ -10338,6 +10464,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &742208480 stripped
@@ -10586,6 +10716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &787355669 stripped
@@ -10685,6 +10819,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -10786,6 +10924,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &807811117 stripped
@@ -10886,6 +11028,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &813815363 stripped
@@ -10985,6 +11131,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -11181,6 +11331,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -11761,6 +11915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &869656388 stripped
@@ -11860,6 +12018,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -12286,6 +12448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (89)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &917327961 stripped
@@ -12385,6 +12551,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -12560,6 +12730,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &942605867 stripped
@@ -12660,6 +12834,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (87)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &955449676 stripped
@@ -12759,6 +12937,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -13007,6 +13189,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (86)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -13282,7 +13468,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030002745}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 23.16, y: -1.47, z: 0}
+  m_LocalPosition: {x: 38.91, y: -1.75, z: -17.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 579493047}
@@ -13415,6 +13601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1030759743 stripped
@@ -13539,7 +13729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 380b38fdebde6464eb6a6dce95517ca6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.89
+      value: 8.89326
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 380b38fdebde6464eb6a6dce95517ca6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13547,19 +13737,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 380b38fdebde6464eb6a6dce95517ca6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.72
+      value: -17.606148
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 380b38fdebde6464eb6a6dce95517ca6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.985129
+      value: 0.9999707
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 380b38fdebde6464eb6a6dce95517ca6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 380b38fdebde6464eb6a6dce95517ca6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.17181647
+      value: 0.0076609263
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 380b38fdebde6464eb6a6dce95517ca6, type: 3}
       propertyPath: m_LocalRotation.z
@@ -13571,7 +13761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 380b38fdebde6464eb6a6dce95517ca6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -19.787
+      value: 0.878
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 380b38fdebde6464eb6a6dce95517ca6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -13584,6 +13774,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 380b38fdebde6464eb6a6dce95517ca6, type: 3}
       propertyPath: m_Name
       value: tronco3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 380b38fdebde6464eb6a6dce95517ca6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8164078558771037576, guid: 380b38fdebde6464eb6a6dce95517ca6, type: 3}
       propertyPath: m_Layer
@@ -13784,6 +13978,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1049043608 stripped
@@ -13884,6 +14082,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1055841387 stripped
@@ -13983,6 +14185,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (77)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -14468,6 +14674,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1114978064 stripped
@@ -14809,6 +15019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1132160326 stripped
@@ -15085,6 +15299,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -15408,6 +15626,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (90)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1155863721 stripped
@@ -15507,6 +15729,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -15762,6 +15988,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (88)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -16479,6 +16709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1263251273 stripped
@@ -16653,6 +16887,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1266388324 stripped
@@ -16678,6 +16916,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1277285545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 380b38fdebde6464eb6a6dce95517ca6, type: 3}
+  m_PrefabInstance: {fileID: 1041270639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1277285546
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277285545}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.8884258
+  m_Height: 6.4280796
+  m_Direction: 2
+  m_Center: {x: 0.029319825, y: 0.10090704, z: 0.047768142}
 --- !u!1001 &1284285103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17071,6 +17328,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1325162352 stripped
@@ -17171,6 +17432,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1327875359 stripped
@@ -17270,6 +17535,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (76)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -17444,6 +17713,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a8328e92d1789504e9e447a5981a7241, type: 3}
   m_PrefabInstance: {fileID: 1341642843}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1346013375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d971e06094b8088489e35afcc0ac7918, type: 3}
+  m_PrefabInstance: {fileID: 138105786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1346013376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346013375}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.81874, y: 4.3124566, z: 3.261014}
+  m_Center: {x: -0.27806106, y: 1.656227, z: -1.1305064}
 --- !u!1001 &1346371090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17518,6 +17805,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -17618,6 +17909,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -18015,6 +18310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (84)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1364501569 stripped
@@ -18405,6 +18704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1441297944 stripped
@@ -18504,6 +18807,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -18901,6 +19208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (50)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1475256515 stripped
@@ -19149,6 +19460,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (72)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1493316538 stripped
@@ -19248,6 +19563,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (81)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -19422,6 +19741,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (92)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -19804,6 +20127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1545174318 stripped
@@ -19977,6 +20304,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (69)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -20478,6 +20809,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (70)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1581647281 stripped
@@ -20652,6 +20987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1584282420 stripped
@@ -20752,6 +21091,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (62)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1586762829 stripped
@@ -20851,6 +21194,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -21025,6 +21372,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -21422,6 +21773,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (67)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1651284320 stripped
@@ -21595,6 +21950,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (95)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -21940,6 +22299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1678988014 stripped
@@ -22039,6 +22402,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (73)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -22297,6 +22664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1695054437 stripped
@@ -22397,6 +22768,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (65)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1698848604 stripped
@@ -22496,6 +22871,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -22745,6 +23124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1712533703 stripped
@@ -22845,6 +23228,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1721665213 stripped
@@ -22944,6 +23331,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (79)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -23826,6 +24217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1781508983 stripped
@@ -23926,6 +24321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (75)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1814064989 stripped
@@ -24025,6 +24424,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (68)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -24371,6 +24774,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &1834241377 stripped
@@ -24573,7 +24980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3c545fff076954e40a6c60de71668d74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.22
+      value: 7.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3c545fff076954e40a6c60de71668d74, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24614,6 +25021,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3c545fff076954e40a6c60de71668d74, type: 3}
       propertyPath: m_Name
       value: tronco2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c545fff076954e40a6c60de71668d74, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 3c545fff076954e40a6c60de71668d74, type: 3}
       propertyPath: m_LocalPosition.y
@@ -24699,6 +25110,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (78)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -24799,6 +25214,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -25128,6 +25547,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -25524,6 +25947,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -25995,6 +26422,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (80)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &2004391688 stripped
@@ -26243,6 +26674,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (82)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &2022147538 stripped
@@ -26416,6 +26851,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -26820,6 +27259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuboTerreno (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
 --- !u!4 &2067164979 stripped
@@ -26919,6 +27362,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
@@ -27167,6 +27614,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
       propertyPath: m_Name
       value: CuboTerreno (94)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b60ec81c5f67fc45b9573c293846ce6, type: 3}
