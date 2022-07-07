@@ -13,7 +13,7 @@ public class InventoryUI : MonoBehaviour
     void Start()
     {
         elixirText = GetComponent<TextMeshProUGUI>();
-        pi = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+       pi = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
 
         elixirText.text = pi.NumberOfElixirs.ToString();
     }
