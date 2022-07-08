@@ -25,6 +25,7 @@ public class WeaponInventory : MonoBehaviour
     public TextMeshProUGUI xBullet;
 
     public Image batImage;
+   
     //  public Sprite pistolSprite;
     // public Sprite batSprite;
 
@@ -44,6 +45,7 @@ public class WeaponInventory : MonoBehaviour
 
         batButton = GameObject.Find("UIMazza").GetComponent<Button>();
         batImage = GameObject.Find("UIMazza").GetComponent<Image>();
+
 
         //   weaponOnHand.SetActive(true);
         //   weaponPosition = weaponOnHand.transform.position;
@@ -134,9 +136,10 @@ public class WeaponInventory : MonoBehaviour
         Debug.Log("You have clicked the Pistolbutton!");
 
         if (weapons[1].activeInHierarchy)
-            setWeaponActive(0);
+             setWeaponActive(0);
         else
             setWeaponActive(1);
+
     }
 
     void TaskOnClickBat()
@@ -144,7 +147,7 @@ public class WeaponInventory : MonoBehaviour
         Debug.Log("You have clicked the Batbutton!");
 
         if (weapons[2].activeInHierarchy)
-            setWeaponActive(0);
+        { setWeaponActive(0); }
         else
             setWeaponActive(2);
     }

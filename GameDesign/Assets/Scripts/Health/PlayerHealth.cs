@@ -28,9 +28,9 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            TakeDamage(20);
-       // damaged = false;
+       // if (Input.GetKeyDown(KeyCode.Space))
+        //  TakeDamage(20);
+        damaged = false;
     }
 
     public void TakeDamage(float damage) //used in the script of enemies to damage the player
@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
         this.currentHealth -= damage;
 
         playerHb.value = currentHealth;
-        // damaged = true;
+        damaged = true;
         fill.color = gradient.Evaluate(playerHb.normalizedValue);
 
         if (currentHealth <= 0)
