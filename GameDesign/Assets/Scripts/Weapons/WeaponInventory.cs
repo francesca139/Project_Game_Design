@@ -3,57 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEditor.Events;
 
 public class WeaponInventory : MonoBehaviour
 {
     public List<GameObject> weapons;
     public List<bool> weaponAvailable;
 
-    int currentWeapon;
-
-    //  Vector3 weaponPosition;
+    public int currentWeapon;
 
     private int countAvailable;
 
     bool canChange;
 
-    // Transform inventoryPanel;
+    public Image batImage;
+    public Button batButton;
+
     public Image pistolImage;
     public Image bulletImage;
     public TextMeshProUGUI bulletText;
     public TextMeshProUGUI xBullet;
-
-    public Image batImage;
-   
-    //  public Sprite pistolSprite;
-    // public Sprite batSprite;
-
     public Button pistolButton;
-    public Button batButton;
+
+    public Image arcoImage;
+    public Image arrowImage;
+    public TextMeshProUGUI arrowText;
+    public TextMeshProUGUI xArrow;
+    public Button arcoButton;
+
 
     void Start()
     {
-        weapons = new List<GameObject>();
-        weaponAvailable = new List<bool>();
-
-        pistolButton = GameObject.Find("UIPistola").GetComponent<Button>();
-        pistolImage = GameObject.Find("UIPistola").GetComponent<Image>();
-        bulletImage = GameObject.Find("ImageProiettili").GetComponent<Image>();
-        bulletText = GameObject.Find("ProiettiliNumero").GetComponent<TextMeshProUGUI>();
-        xBullet = GameObject.Find("xProiettili").GetComponent<TextMeshProUGUI>();
-
-        batButton = GameObject.Find("UIMazza").GetComponent<Button>();
-        batImage = GameObject.Find("UIMazza").GetComponent<Image>();
-
-
-        //   weaponOnHand.SetActive(true);
-        //   weaponPosition = weaponOnHand.transform.position;
+        weapons = MainManager.Instance.weapons;
+        weaponAvailable = MainManager.Instance.weaponAvailable;
 
         // Commento: lui parte disarmato, quindi si potrebbe modificare la lista weapon come segue
         // - weapon[0] --> disarmato (stato iniziale)
-        // - weapon[1] --> bastone 
-        // - weapon[2] --> pistola
+        // - weapon[1] --> bastone, mondo 1 e 2 
+        // - weapon[2] --> pistola, mondo 1
+        // -weapon [3] ---> arco, mondo 2
 
         // Quando l'utente clicca sulla casella relativa avviene un
         // weapons[1].SetActive(true) e tutti gli altri passano a false,
@@ -62,52 +52,88 @@ public class WeaponInventory : MonoBehaviour
         // del trigger
 
         //introduco gi? i gameobjects nell'inventario
-        GameObject empty = GameObject.FindGameObjectWithTag("EmptyHand");
-        weapons.Add(empty);
-        weaponAvailable.Add(true);
-        weapons[0].SetActive(true);
+        /*
+           weaponAvailable.Add(true);
+           weapons[0].SetActive(true);
 
-        GameObject pistola = GameObject.FindGameObjectWithTag("Pistola");
-        weapons.Add(pistola);
-        weaponAvailable.Add(false);
-        weapons[1].SetActive(false);
-        pistolImage.enabled = false;
-        bulletImage.enabled = false;
-        xBullet.enabled = false;
-        bulletText.enabled = false;
 
-        //pistolImage.sprite = pistolSprite;
-        pistolButton.enabled = false;
-        //  pistolButton.enabled = false;
+           batImage.enabled = false;
+           // batImage.sprite = batSprite;
+           batButton.enabled = false;
+           // batButton.SetActive(false);
 
-        GameObject mazza = GameObject.FindGameObjectWithTag("Mazza");
-        weapons.Add(mazza);
-        weaponAvailable.Add(false);
-        weapons[2].SetActive(false); //il personaggio ha in mano la pistola all'inizio
-        batImage.enabled = false;
-        // batImage.sprite = batSprite;
-        batButton.enabled = false;
-        // batButton.SetActive(false);
+           pistolImage.enabled = false;
+           bulletImage.enabled = false;
+           xBullet.enabled = false;
+           bulletText.enabled = false;
+           //pistolImage.sprite = pistolSprite;
+           pistolButton.enabled = false;
+           //  pistolButton.enabled = false;
 
-        canChange = false;
-        currentWeapon = 0;
+           arcoImage.enabled = false;
+           arrowImage.enabled = false;
+           xArrow.enabled = false;
+           arrowText.enabled = false;
 
-        pistolButton.onClick.AddListener(TaskOnClickPistol);
-        batButton.onClick.AddListener(TaskOnClickBat);
+           arcoButton.enabled = false; */
+
+        canChange = MainManager.Instance.canChange;
+        // currentWeapon = MainManager.Instance.currentWeapon;
+
+
+        //batButton2 = MainManager.Instance.batButton;
+        //   batButton2.onClick.AddListener(TaskOnClickBat);
+        //   UnityEventTools.AddPersistentListener(batButton2.onClick, TaskOnClickBat);
+
+
+
+        //    batButton.onClick.AddListener(TaskOnClickBat);
+        //   pistolButton.onClick.AddListener(TaskOnClickPistol);
+        //   arcoButton.onClick.AddListener(TaskOnClickArco);
     }
 
     public UnityEvent<WeaponInventory> OnWeaponCollected;
+
+    public void FixedUpdate()
+    {
+        batButton = MainManager.Instance.batButton;
+        batImage = MainManager.Instance.batImage;
+
+        pistolButton = MainManager.Instance.pistolButton;
+        pistolImage = MainManager.Instance.pistolImage;
+        bulletImage = MainManager.Instance.bulletImage;
+        bulletText = MainManager.Instance.bulletText;
+        xBullet = MainManager.Instance.xBullet;
+
+        arcoButton = MainManager.Instance.arcoButton;
+        arcoImage = MainManager.Instance.arcoImage;
+        arrowImage = MainManager.Instance.arrowImage;
+        arrowText = MainManager.Instance.arrowText;
+        xArrow = MainManager.Instance.xArrow;
+
+    }
+
     public void WeaponCollected(GameObject go)
 
     {
         for (int i = 0; i < weapons.Count; i++)
         {
             if (weapons[i].CompareTag(go.name))
+            {
                 weaponAvailable[i] = true;
+                MainManager.Instance.weaponAvailable[i] = true;
+            }
+
+            if (go.name == "Mazza")
+            {
+
+                batButton.enabled = true;
+                batImage.enabled = true;
+                Debug.Log("Bat collected");
+            }
 
             if (go.name == "Pistola")
             {
-                //  pistolImage.enabled = true;
                 pistolButton.enabled = true;
                 pistolImage.enabled = true;
                 bulletImage.enabled = true;
@@ -116,14 +142,17 @@ public class WeaponInventory : MonoBehaviour
                 Debug.Log("Pistol collected");
             }
 
-            if (go.name == "Mazza")
+            if (go.name == "Arco")
             {
-                //  batImage.enabled = true;
-
-                batButton.enabled = true;
-                batImage.enabled = true;
-                Debug.Log("Bat collected");
+                arcoButton.enabled = true;
+                arcoImage.enabled = true;
+                arrowImage.enabled = true;
+                xArrow.enabled = true;
+                arrowText.enabled = true;
+                Debug.Log("Arco collected");
             }
+
+
 
         }
 
@@ -131,78 +160,76 @@ public class WeaponInventory : MonoBehaviour
 
     }
 
-    void TaskOnClickPistol()
+    public void Update()
     {
-        Debug.Log("You have clicked the Pistolbutton!");
+        if (SceneManager.GetActiveScene().name == "Fairy")
+        {
+            currentWeapon = MainManager.Instance.currentWeapon;
+            Debug.Log("CHANGE 1");
+            if (MainManager.Instance.currentWeapon == 2)
+            {
+                Debug.Log("CHANGEEEEEEEEEEEEEEEEEEEEEEE");
+                setWeaponActive(0);
+                currentWeapon = 0;
 
-        if (weapons[1].activeInHierarchy)
-             setWeaponActive(0);
-        else
-            setWeaponActive(1);
+            }
+        }
 
+        if (SceneManager.GetActiveScene().name == "SampleScene")
+        {
+            currentWeapon = MainManager.Instance.currentWeapon;
+            Debug.Log("CHANGE 1");
+            if (MainManager.Instance.currentWeapon == 3)
+            {
+                Debug.Log("CHANGEEEEEEEEEEEEEEEEEEEEEEE");
+                setWeaponActive(0);
+                currentWeapon = 0;
+
+            }
+        }
     }
 
-    void TaskOnClickBat()
+    public void TaskOnClickBat()
     {
         Debug.Log("You have clicked the Batbutton!");
 
-        if (weapons[2].activeInHierarchy)
+        if (weapons[1].activeInHierarchy)
         { setWeaponActive(0); }
         else
-            setWeaponActive(2);
+            setWeaponActive(1);
     }
 
-    void Update()
+    public void TaskOnClickPistol()
     {
-        for (int i = 0; i < weapons.Count; i++)
-        {
-            if (weaponAvailable[i] == true)
-                countAvailable++;
+        Debug.Log("You have clicked the Pistolbutton!");
 
+        if (weapons[2].activeInHierarchy)
+        {
+            setWeaponActive(0);
         }
-
-        if (countAvailable > 1)
-            canChange = true;
-
-
-        if (canChange && weapons.Count > 2)
+        else
         {
-            if (Input.GetMouseButtonDown(2))
-            {
-                Debug.Log("Change weapon");
-
-                int i;
-                for (i = currentWeapon + 1; i < weapons.Count; i++)
-                {
-                    if (weaponAvailable[i] == true)
-                    {
-
-                        currentWeapon = i;
-                        setWeaponActive(currentWeapon);
-                        return;
-                    }
-                }
-
-                for (i = 0; i < currentWeapon; i++)
-                {
-                    if (weaponAvailable[i] == true)
-                    {
-                        currentWeapon = i;
-                        setWeaponActive(currentWeapon);
-                        return;
-                    }
-                }
-
-            }
-
+            setWeaponActive(2);
         }
 
     }
+
+    public void TaskOnClickArco()
+    {
+        Debug.Log("You have clicked the Arcobutton!");
+
+        if (weapons[3].activeInHierarchy)
+        { setWeaponActive(0); }
+        else
+            setWeaponActive(3);
+    }
+
 
     public void setWeaponActive(int e)
     {
         deactivateWeapons();
         weapons[e].SetActive(true);
+        MainManager.Instance.weapons[e].SetActive(true);
 
     }
 
@@ -211,11 +238,14 @@ public class WeaponInventory : MonoBehaviour
         for (int i = 0; i < weapons.Count; i++)
         {
             weapons[i].SetActive(false);
+            MainManager.Instance.weapons[i].SetActive(false);
         }
     }
 
     public void activateWeapon(int w)
     {
         weaponAvailable[w] = true;
+        MainManager.Instance.weaponAvailable[w] = true;
+
     }
 }

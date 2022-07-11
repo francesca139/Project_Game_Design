@@ -9,6 +9,10 @@ TagManager:
   - Mazza
   - Enemy
   - EmptyHand
+  - Arco
+  - Stackable
+  - HealthSlider
+  - FillHb
   layers:
   - Default
   - TransparentFX

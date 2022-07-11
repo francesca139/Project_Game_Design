@@ -1264,6 +1264,7 @@ GameObject:
   - component: {fileID: 22050361}
   - component: {fileID: 22050360}
   - component: {fileID: 22050359}
+  - component: {fileID: 22050362}
   m_Layer: 5
   m_Name: UIPistola
   m_TagString: Untagged
@@ -1335,7 +1336,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 22050360}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 22050362}
+        m_TargetAssemblyTypeName: ClickPistol, Assembly-CSharp
+        m_MethodName: TaskOnClickPistol
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &22050360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1374,6 +1387,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22050357}
   m_CullTransparentMesh: 1
+--- !u!114 &22050362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22050357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f9a2c6a7d82684bb099564d6217793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wi: {fileID: 0}
 --- !u!1001 &30635272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5368,7 +5394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4115b1dd5f75f45d19b6e05274f2ece6, type: 3}
       propertyPath: m_Name
-      value: Mazza
+      value: MazzaOnHand
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4115b1dd5f75f45d19b6e05274f2ece6, type: 3}
       propertyPath: m_IsActive
@@ -6032,6 +6058,108 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 97fa9aa4bcbe0e14cb7882a4cc27ffca, type: 3}
   m_PrefabInstance: {fileID: 189666612}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &189922968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 189922969}
+  - component: {fileID: 189922970}
+  m_Layer: 0
+  m_Name: MainManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &189922969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189922968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 584.0301, y: 274.69644, z: 5.063362}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &189922970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189922968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0407a6fbe49e9a74399b3ddf28fda2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 
+  one: 0
+  fullHealth: 10
+  currentHealth: 0
+  healthSlider: {fileID: 0}
+  gradientHb:
+    serializedVersion: 2
+    key0: {r: 0.754717, g: 0.13855688, b: 0.08116763, a: 1}
+    key1: {r: 0.83137256, g: 0.7769722, b: 0.12941177, a: 1}
+    key2: {r: 0.12844422, g: 0.8301887, b: 0.14091644, a: 0}
+    key3: {r: 1, g: 1, b: 1, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 11565
+    ctime1: 38165
+    ctime2: 62837
+    ctime3: 65535
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 4
+    m_NumAlphaKeys: 2
+  fillHb: {fileID: 0}
+  weapons: []
+  weaponAvailable: 
+  currentWeapon: 0
+  countAvailable: 0
+  canChange: 0
+  batImage: {fileID: 0}
+  batButton: {fileID: 0}
+  pistolImage: {fileID: 0}
+  bulletImage: {fileID: 0}
+  bulletText: {fileID: 0}
+  xBullet: {fileID: 0}
+  pistolButton: {fileID: 0}
+  arcoImage: {fileID: 0}
+  arrowImage: {fileID: 0}
+  arrowText: {fileID: 0}
+  xArrow: {fileID: 0}
+  arcoButton: {fileID: 0}
+  player: {fileID: 0}
+  wi: {fileID: 0}
+  numberOfPeople: 0
+  numberOfArrows: 0
+  numberOfElixirs: 0
+  collected: []
+  coll: []
 --- !u!1 &191514260
 GameObject:
   m_ObjectHideFlags: 0
@@ -10361,7 +10489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6c7e4ff76faa545279041f88b124b01c, type: 3}
       propertyPath: m_Name
-      value: Pistola
+      value: PistolaOnHand
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6c7e4ff76faa545279041f88b124b01c, type: 3}
       propertyPath: m_IsActive
@@ -13803,7 +13931,7 @@ GameObject:
   - component: {fileID: 396410035}
   m_Layer: 5
   m_Name: Fill
-  m_TagString: Untagged
+  m_TagString: FillHb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13824,8 +13952,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.5, y: 0.5}
-  m_SizeDelta: {x: 1, y: -3}
+  m_AnchoredPosition: {x: -2.199997, y: 0}
+  m_SizeDelta: {x: -0.4000001, y: -3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396410035
 MonoBehaviour:
@@ -13840,14 +13968,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.990566, g: 0.96626914, b: 0.96626914, a: 1}
+  m_Color: {r: 0.036027018, g: 0.8679245, b: 0.06711857, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 488daf16e84d91e428bb35193b218d17, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14409,6 +14537,7 @@ GameObject:
   - component: {fileID: 414465756}
   - component: {fileID: 414465758}
   - component: {fileID: 414465757}
+  - component: {fileID: 414465759}
   m_Layer: 5
   m_Name: NumberOfPeople
   m_TagString: Untagged
@@ -14534,6 +14663,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414465755}
   m_CullTransparentMesh: 1
+--- !u!114 &414465759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414465755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a427afe20b06bce4db927611ba726091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peopleText: {fileID: 0}
 --- !u!1 &414831063
 GameObject:
   m_ObjectHideFlags: 0
@@ -24627,7 +24769,7 @@ GameObject:
   - component: {fileID: 728275161}
   m_Layer: 5
   m_Name: HealthSlider
-  m_TagString: Untagged
+  m_TagString: HealthSlider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24701,7 +24843,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.99
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -51734,6 +51876,7 @@ Transform:
   - {fileID: 169800584}
   - {fileID: 330693796}
   - {fileID: 629339960}
+  - {fileID: 1852086665}
   m_Father: {fileID: 1395788310}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60124,7 +60267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: -3}
   m_SizeDelta: {x: 250, y: 150}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1833249462
@@ -60511,6 +60654,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e76d75e96fb091643ae5380f9d894fcc, type: 3}
   m_PrefabInstance: {fileID: 1849140317}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1852086664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1852086665}
+  m_Layer: 0
+  m_Name: ArcoOnHand
+  m_TagString: Arco
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1852086665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852086664}
+  m_LocalRotation: {x: -0.035555404, y: 0.6907733, z: -0.7213754, w: 0.03443336}
+  m_LocalPosition: {x: -0.22285947, y: -1.2649912, z: 0.1374525}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1561104622}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1852569961
 GameObject:
   m_ObjectHideFlags: 0
@@ -64929,6 +65102,7 @@ GameObject:
   - component: {fileID: 1985810137}
   - component: {fileID: 1985810136}
   - component: {fileID: 1985810135}
+  - component: {fileID: 1985810138}
   m_Layer: 5
   m_Name: UIMazza
   m_TagString: Untagged
@@ -64999,7 +65173,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1985810136}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1985810138}
+        m_TargetAssemblyTypeName: ClickBat, Assembly-CSharp
+        m_MethodName: TaskOnClickBat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1985810136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65038,6 +65224,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985810133}
   m_CullTransparentMesh: 1
+--- !u!114 &1985810138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985810133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af0204803ddc6f4eb6cae21d3fd0972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wi: {fileID: 0}
+  currentWeapon: 0
 --- !u!1 &1988442154
 GameObject:
   m_ObjectHideFlags: 0
@@ -65649,13 +65849,19 @@ MonoBehaviour:
   weapons:
   - {fileID: 1230351958}
   weaponAvailable: 
+  currentWeapon: 0
+  batImage: {fileID: 0}
+  batButton: {fileID: 0}
   pistolImage: {fileID: 0}
   bulletImage: {fileID: 0}
   bulletText: {fileID: 0}
   xBullet: {fileID: 0}
-  batImage: {fileID: 0}
   pistolButton: {fileID: 0}
-  batButton: {fileID: 0}
+  arcoImage: {fileID: 0}
+  arrowImage: {fileID: 0}
+  arrowText: {fileID: 0}
+  xArrow: {fileID: 0}
+  arcoButton: {fileID: 0}
   OnWeaponCollected:
     m_PersistentCalls:
       m_Calls: []
@@ -65674,35 +65880,6 @@ MonoBehaviour:
   fullHealth: 10
   currentHealth: 0
   playerHb: {fileID: 728275161}
-  gradient:
-    serializedVersion: 2
-    key0: {r: 0.754717, g: 0.13855688, b: 0.08116763, a: 1}
-    key1: {r: 0.83137256, g: 0.7769722, b: 0.12941177, a: 1}
-    key2: {r: 0.12844422, g: 0.8301887, b: 0.14091644, a: 0}
-    key3: {r: 1, g: 1, b: 1, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 11372
-    ctime1: 31226
-    ctime2: 62837
-    ctime3: 65535
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 4
-    m_NumAlphaKeys: 2
   fill: {fileID: 396410035}
 --- !u!114 &2022720936
 MonoBehaviour:
@@ -65716,7 +65893,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73565a10ede07cc4f94b77ea83c3680b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnSphereCollected:
+  numberOfPeople: 0
+  numberOfElixirs: 0
+  numberOfArrows: 0
+  OnElixirCollected:
+    m_PersistentCalls:
+      m_Calls: []
+  OnArrowCollected:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPersonSaved:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &2023374310

@@ -5,7 +5,7 @@ using TMPro;
 
 
 //script nel caso in cui volessimo far comparire il numero degli elisir raccolti visibile nella scheramat di gioco
-public class InventoryUI : MonoBehaviour
+public class ElixirUI : MonoBehaviour
 {
     private PlayerInventory pi;
     private TextMeshProUGUI elixirText;
@@ -13,14 +13,14 @@ public class InventoryUI : MonoBehaviour
     void Start()
     {
         elixirText = GetComponent<TextMeshProUGUI>();
-       pi = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+        pi = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
 
-        elixirText.text = pi.NumberOfElixirs.ToString();
+        elixirText.text = pi.getNumberOfElixirs().ToString();
     }
 
     // Update is called once per frame
-    public void UpdateBulletText(PlayerInventory pi)
+    void FixedUpdate()
     {
-        elixirText.text = pi.NumberOfElixirs.ToString();
+        elixirText.text = pi.getNumberOfElixirs().ToString();
     }
 }

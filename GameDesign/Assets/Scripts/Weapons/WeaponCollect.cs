@@ -13,8 +13,9 @@ public class WeaponCollect : MonoBehaviour
             {
                 wi.WeaponCollected(gameObject);
 
-                //  gameObject.SetActive(false);
-                Destroy(transform.root.gameObject);
+                gameObject.SetActive(false);
+                MainManager.Instance.collected.Add(gameObject.name);
+                //   Destroy(transform.root.gameObject);
 
 
                 Debug.Log("WEAPON COLLECTED!");
@@ -22,5 +23,6 @@ public class WeaponCollect : MonoBehaviour
         }
     }
 }
+
 
 

@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-//per raccogliere gli eslir
-public class Elixir : MonoBehaviour
+public class Arrow : MonoBehaviour
 {
     public string goName;
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,8 +16,7 @@ public class Elixir : MonoBehaviour
             gameObject.SetActive(false);
             //  Destroy(gameObject);
             MainManager.Instance.collected.Add(gameObject.name);
-            pi.ElixirCollected();
-            //  gameObject.SetActive(false);
+            pi.ArrowCollected();
 
         }
     }
