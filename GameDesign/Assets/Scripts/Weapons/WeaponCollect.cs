@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WeaponCollect : MonoBehaviour
 {
+    private AudioManager audioManager;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -19,6 +20,8 @@ public class WeaponCollect : MonoBehaviour
 
 
                 Debug.Log("WEAPON COLLECTED!");
+		audioManager = FindObjectOfType<AudioManager>();
+		audioManager.SeleccionAudio(0,0.5f);
             }
         }
     }

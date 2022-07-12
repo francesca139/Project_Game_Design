@@ -19,6 +19,9 @@ public class Movement : MonoBehaviour
     public Transform groundCheck;
     public float jumpHeight;
 
+    //Sound
+    private AudioManager audioManager;
+
    // private static bool exists;  //da usare per i portali
 
     // Start is called before the first frame update
@@ -59,9 +62,17 @@ public class Movement : MonoBehaviour
         myAnim.SetFloat("speed", Mathf.Abs(move));
 
         myRB.velocity = new Vector3(move * runSpeed, myRB.velocity.y, 0);
+		
 
-        if (move > 0 && !facingRight) Flip();
-        else if (move < 0 && facingRight) Flip();
+        if (move > 0 && !facingRight)
+	{
+	 Flip();
+	
+	}
+        else if (move < 0 && facingRight) 
+	{
+	  Flip();
+	}
     }
 
     private void Flip()

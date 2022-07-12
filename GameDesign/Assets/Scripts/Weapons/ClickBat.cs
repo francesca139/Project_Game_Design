@@ -25,12 +25,14 @@ public class ClickBat : MonoBehaviour
             wi.setWeaponActive(0);
             Debug.Log("DEACTIVATE BAT");
             MainManager.Instance.currentWeapon = 0;
+	   
         }
         else
         {
             wi.setWeaponActive(1);
             Debug.Log("ACTIVATE BAT");
             MainManager.Instance.currentWeapon = 1;
+	    
         }
     }
 }
