@@ -20,6 +20,10 @@ public class MainManager : MonoBehaviour
     public Gradient gradientHb;
     public Image fillHb;
 
+    public float fullFlight = 10;
+    public float currentFlight;
+    public Slider flightSlider;
+
     //inventario armi
     public List<GameObject> weapons;
     public List<bool> weaponAvailable;
@@ -37,6 +41,8 @@ public class MainManager : MonoBehaviour
     public TextMeshProUGUI xBullet;
     public Button pistolButton;
 
+    public float bulletDamage;
+
     public Image arcoImage;
     public Image arrowImage;
     public TextMeshProUGUI arrowText;
@@ -50,10 +56,11 @@ public class MainManager : MonoBehaviour
     public int numberOfPeople;
     public int numberOfArrows;
     public int numberOfElixirs;
+    public int numberOfBullets;
+
+    public float animationLayer;
 
     public List<string> collected;
-
-    public List<GameObject> coll;
 
 
     private void Awake()
@@ -98,15 +105,25 @@ public class MainManager : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         wi = player.GetComponent<WeaponInventory>();
-
+        
         currentHealth = fullHealth;
+        currentFlight = fullFlight;
+
+        numberOfElixirs = 0;
+        numberOfPeople = 0;
+        numberOfArrows = 0;
+        
+        numberOfBullets = 10;
+        bulletDamage = 1f;
+
+        animationLayer = 1;
+
+        
     }
 
     private void FixedUpdate()
     {
         scene = SceneManager.GetActiveScene().name;
-
-
 
 
         //PER ELIMINARE GLI OGGETTI COLLEZIONATI
@@ -132,7 +149,12 @@ public class MainManager : MonoBehaviour
         healthSlider.value = currentHealth;
         fillHb.color = gradientHb.Evaluate(healthSlider.normalizedValue);
 
-
+        if (SceneManager.GetActiveScene().name == "Fairy")
+        {
+            flightSlider = GameObject.FindGameObjectWithTag("FlightSlider").GetComponent<Slider>();
+            flightSlider.maxValue = fullFlight;
+            flightSlider.value = currentFlight;
+        }
 
         //inventario armi
         batButton = GameObject.Find("UIMazza").GetComponent<Button>();

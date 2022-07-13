@@ -13,6 +13,10 @@ TagManager:
   - Stackable
   - HealthSlider
   - FillHb
+  - FlightSlider
+  - Mushroom
+  - Fairy
+  - Dwarf
   layers:
   - Default
   - TransparentFX

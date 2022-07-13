@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45142144, g: 0.50084895, b: 0.5719847, a: 1}
+  m_IndirectSpecularColor: {r: 0.4514218, g: 0.5008492, b: 0.5719849, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1306,7 +1306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1316,7 +1316,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.8679245, g: 0.85482377, b: 0.85482377, a: 0.9529412}
     m_HighlightedColor: {r: 0.94767314, g: 0.9528302, b: 0.6687789, a: 1}
-    m_PressedColor: {r: 0.9531054, g: 0.98039216, b: 0.73333335, a: 1}
+    m_PressedColor: {r: 0.8867924, g: 0.86665165, b: 0.48020646, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.7169812, g: 0.67233896, b: 0.67233896, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1400,6 +1400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wi: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1001 &30635272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6118,7 +6119,7 @@ MonoBehaviour:
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 11565
     ctime1: 38165
-    ctime2: 62837
+    ctime2: 65535
     ctime3: 65535
     ctime4: 0
     ctime5: 0
@@ -6133,9 +6134,12 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_NumColorKeys: 4
+    m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fillHb: {fileID: 0}
+  fullFlight: 10
+  currentFlight: 0
+  flightSlider: {fileID: 0}
   weapons: []
   weaponAvailable: 
   currentWeapon: 0
@@ -6148,6 +6152,7 @@ MonoBehaviour:
   bulletText: {fileID: 0}
   xBullet: {fileID: 0}
   pistolButton: {fileID: 0}
+  bulletDamage: 0
   arcoImage: {fileID: 0}
   arrowImage: {fileID: 0}
   arrowText: {fileID: 0}
@@ -6158,8 +6163,9 @@ MonoBehaviour:
   numberOfPeople: 0
   numberOfArrows: 0
   numberOfElixirs: 0
+  numberOfBullets: 0
+  animationLayer: 0
   collected: []
-  coll: []
 --- !u!1 &191514260
 GameObject:
   m_ObjectHideFlags: 0
@@ -26483,6 +26489,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.020000005, z: 0.019268587}
   m_Center: {x: 0, y: 4.493044e-17, z: -0.008753023}
+--- !u!1 &768332282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 768332283}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: EmptyHand
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &768332283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768332282}
+  m_LocalRotation: {x: 0.5254827, y: 0.5254827, z: -0.47314686, w: -0.47314686}
+  m_LocalPosition: {x: -0.06, y: -0.001, z: -0.017}
+  m_LocalScale: {x: 0.16830899, y: 0.16830902, z: 0.16830899}
+  m_Children: []
+  m_Father: {fileID: 330693796}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 180, y: 84, z: -90}
 --- !u!1001 &772351116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43682,7 +43718,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1318580010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9a0081ef69efac4cb6e6023596ce691, type: 3}
+  m_Script: {fileID: 11500000, guid: c4798e687dfeb414188e9b20c4b4d134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1318580013
@@ -60401,7 +60437,7 @@ RectTransform:
   m_GameObject: {fileID: 1833249460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_Children:
   - {fileID: 1985810134}
   - {fileID: 22050358}
@@ -65384,7 +65420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -65394,7 +65430,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.8679245, g: 0.85482377, b: 0.85482377, a: 0.9529412}
     m_HighlightedColor: {r: 0.94767314, g: 0.9528302, b: 0.6687789, a: 1}
-    m_PressedColor: {r: 0.9531054, g: 0.98039216, b: 0.73333335, a: 1}
+    m_PressedColor: {r: 0.9528302, g: 0.94238335, b: 0.5699003, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.7169812, g: 0.67233896, b: 0.67233896, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -65477,6 +65513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8af0204803ddc6f4eb6cae21d3fd0972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myAnim: {fileID: 0}
   wi: {fileID: 0}
   currentWeapon: 0
 --- !u!82 &1985810139
@@ -66329,10 +66366,14 @@ MonoBehaviour:
   numberOfPeople: 0
   numberOfElixirs: 0
   numberOfArrows: 0
+  numberOfBullets: 0
   OnElixirCollected:
     m_PersistentCalls:
       m_Calls: []
   OnArrowCollected:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBulletCollected:
     m_PersistentCalls:
       m_Calls: []
   OnPersonSaved:
@@ -70861,3 +70902,60 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144696501}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1057359317595182421
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 738721256344900728, guid: 9e805ddd92ab90e499cdbbc7d2cfc643, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 738721256344900728, guid: 9e805ddd92ab90e499cdbbc7d2cfc643, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 738721256344900728, guid: 9e805ddd92ab90e499cdbbc7d2cfc643, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 738721256344900728, guid: 9e805ddd92ab90e499cdbbc7d2cfc643, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 738721256344900728, guid: 9e805ddd92ab90e499cdbbc7d2cfc643, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 738721256344900728, guid: 9e805ddd92ab90e499cdbbc7d2cfc643, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 738721256344900728, guid: 9e805ddd92ab90e499cdbbc7d2cfc643, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 738721256344900728, guid: 9e805ddd92ab90e499cdbbc7d2cfc643, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 738721256344900728, guid: 9e805ddd92ab90e499cdbbc7d2cfc643, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 738721256344900728, guid: 9e805ddd92ab90e499cdbbc7d2cfc643, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 738721256344900728, guid: 9e805ddd92ab90e499cdbbc7d2cfc643, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653386353103137043, guid: 9e805ddd92ab90e499cdbbc7d2cfc643, type: 3}
+      propertyPath: m_Name
+      value: BulletPROVA
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e805ddd92ab90e499cdbbc7d2cfc643, type: 3}

@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
     //Sound
     private AudioManager audioManager;
 
-   // private static bool exists;  //da usare per i portali
+    private static bool exists;  //da usare per i portali
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour
         myAnim = GetComponent<Animator>();
         facingRight = true;
 
-     /*   if (!exists)
+        if (!exists)
         {
             exists = true;
             DontDestroyOnLoad(transform.gameObject);
@@ -39,7 +39,7 @@ public class Movement : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        } */  //aggiunto per il passaggio tra i mondi
+        }   //aggiunto per il passaggio tra i mondi
     }
 
     // Update is called once per frame
@@ -62,7 +62,28 @@ public class Movement : MonoBehaviour
         myAnim.SetFloat("speed", Mathf.Abs(move));
 
         myRB.velocity = new Vector3(move * runSpeed, myRB.velocity.y, 0);
-		
+
+
+        //AGGIUNTA PER ANIMAZIONI UPPER BODY (??)
+        if(MainManager.Instance.animationLayer == 2 )
+        {  
+            myAnim.SetBool("WithBat", true);
+            myAnim.SetBool("WithGun", false);
+            myAnim.SetBool("WithBow", false);
+        }
+        else if (MainManager.Instance.animationLayer == 3)
+        {
+            myAnim.SetBool("WithBat", false);
+            myAnim.SetBool("WithGun", true);
+            myAnim.SetBool("WithBow", false);
+        }
+        else if (MainManager.Instance.animationLayer == 4)
+        {
+            myAnim.SetBool("WithBat", false);
+            myAnim.SetBool("WithGun", false);
+            myAnim.SetBool("WithBow", true);
+        }
+
 
         if (move > 0 && !facingRight)
 	{
