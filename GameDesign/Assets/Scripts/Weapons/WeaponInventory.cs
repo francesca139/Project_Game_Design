@@ -26,6 +26,10 @@ public class WeaponInventory : MonoBehaviour
     public TextMeshProUGUI bulletText;
     public TextMeshProUGUI xBullet;
     public Button pistolButton;
+    public Button bulletButton;
+    public Image sottoBullet;
+
+    public Button elixirButton;
 
     public Image arcoImage;
     public Image arrowImage;
@@ -104,6 +108,10 @@ public class WeaponInventory : MonoBehaviour
         bulletImage = MainManager.Instance.bulletImage;
         bulletText = MainManager.Instance.bulletText;
         xBullet = MainManager.Instance.xBullet;
+        bulletButton = MainManager.Instance.bulletButton;
+        sottoBullet = MainManager.Instance.sottoBullet;
+
+        elixirButton = MainManager.Instance.elixirButton;
 
         arcoButton = MainManager.Instance.arcoButton;
         arcoImage = MainManager.Instance.arcoImage;
@@ -139,6 +147,11 @@ public class WeaponInventory : MonoBehaviour
                 bulletImage.enabled = true;
                 xBullet.enabled = true;
                 bulletText.enabled = true;
+
+                bulletButton.enabled = true;
+                sottoBullet.enabled = true;
+             
+                elixirButton.enabled = true; //si attiva anche questo con la pistola
                 Debug.Log("Pistol collected");
             }
 

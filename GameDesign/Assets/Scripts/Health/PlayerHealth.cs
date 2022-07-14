@@ -31,12 +31,12 @@ public class PlayerHealth : MonoBehaviour
         this.fill = MainManager.Instance.fillHb;
     }
 
-    void Update()
+  /*  void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
             TakeDamage(1);
         damaged = false;
-    }
+    } */
 
     public void TakeDamage(float damage) //used in the script of enemies to damage the player
     {
@@ -56,7 +56,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void makeDead()
     {
-        Debug.Log("the game obj has been destroyed");
+        Debug.Log("the PLAYER has been destroyed");
         //Destroy(gameObject);
     }
 }

@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class MushroomHealth : MonoBehaviour
+public class FairyHealth : MonoBehaviour
 {
     public float fullHealth;
     public float currentHealth;
@@ -46,7 +45,7 @@ public class MushroomHealth : MonoBehaviour
         damaged = true;
 
         if (currentHealth <= 0)
-        {   
+        {
             makeDead();
         }
     }
@@ -60,5 +59,4 @@ public class MushroomHealth : MonoBehaviour
 
         Destroy(gameObject.transform.root.gameObject);
     }
-
 }

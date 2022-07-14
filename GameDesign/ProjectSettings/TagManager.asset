@@ -17,6 +17,7 @@ TagManager:
   - Mushroom
   - Fairy
   - Dwarf
+  - Bullet
   layers:
   - Default
   - TransparentFX

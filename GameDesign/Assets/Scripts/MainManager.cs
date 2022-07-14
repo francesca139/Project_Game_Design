@@ -32,6 +32,14 @@ public class MainManager : MonoBehaviour
     public int countAvailable;
     public bool canChange;
 
+    public Image elixirImage;
+    public TextMeshProUGUI elixirText;
+    public TextMeshProUGUI xElixir;
+    public Button elixirButton;
+
+    public TextMeshProUGUI numberOfPeopleText;
+    public int typeProiettile;
+
     public Image batImage;
     public Button batButton;
 
@@ -40,8 +48,8 @@ public class MainManager : MonoBehaviour
     public TextMeshProUGUI bulletText;
     public TextMeshProUGUI xBullet;
     public Button pistolButton;
-
-    public float bulletDamage;
+    public Button bulletButton;
+    public Image sottoBullet;
 
     public Image arcoImage;
     public Image arrowImage;
@@ -57,6 +65,12 @@ public class MainManager : MonoBehaviour
     public int numberOfArrows;
     public int numberOfElixirs;
     public int numberOfBullets;
+
+    //danni
+    public float bulletDamage;
+    public float arrowDamage;
+    public float elixirEffect;
+    public float batDamage;
 
     public float animationLayer;
 
@@ -112,9 +126,14 @@ public class MainManager : MonoBehaviour
         numberOfElixirs = 0;
         numberOfPeople = 0;
         numberOfArrows = 0;
-        
         numberOfBullets = 10;
+
         bulletDamage = 1f;
+        arrowDamage = 1f;
+        elixirEffect = 1f;
+        batDamage = 1f;
+
+        typeProiettile = 0;
 
         animationLayer = 1;
 
@@ -175,7 +194,10 @@ public class MainManager : MonoBehaviour
             bulletImage = GameObject.Find("ImageProiettili").GetComponent<Image>();
             bulletText = GameObject.Find("ProiettiliNumero").GetComponent<TextMeshProUGUI>();
             xBullet = GameObject.Find("xProiettili").GetComponent<TextMeshProUGUI>();
+            bulletButton = GameObject.Find("InfoPistola").GetComponent<Button>();
+            this.sottoBullet = GameObject.Find("InfoPistola").GetComponent<Image>();
 
+            elixirButton = GameObject.Find("InfoElixirs").GetComponent<Button>(); //solo nel mondo1
 
             if (!weaponAvailable[2])
             {
@@ -184,8 +206,17 @@ public class MainManager : MonoBehaviour
                 xBullet.enabled = false;
                 bulletText.enabled = false;
                 pistolButton.enabled = false;
+
+                bulletButton.enabled = false;
             }
         }
+
+        elixirImage = GameObject.Find("ImageElixirs").GetComponent<Image>();
+        elixirText = GameObject.Find("ElixirsNumero").GetComponent<TextMeshProUGUI>();
+        xElixir = GameObject.Find("xElixirs").GetComponent<TextMeshProUGUI>();
+
+        numberOfPeopleText = GameObject.Find("NumberOfPeople").GetComponent<TextMeshProUGUI>();
+
 
         if (SceneManager.GetActiveScene().name == "Fairy")
         {
