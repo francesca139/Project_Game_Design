@@ -14,9 +14,12 @@ public class ClickPistol : MonoBehaviour
     public WeaponInventory wi;
     public Button button;
 
+    public Animator myAnim;
+
     public void Awake()
     {
         button = GameObject.Find("UIPistola").GetComponent<Button>();
+        myAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
     public void FixedUpdate()
     {
@@ -46,7 +49,8 @@ public class ClickPistol : MonoBehaviour
             Debug.Log("DEACTIVATE PISTOL");
             MainManager.Instance.currentWeapon = 0;
 
-            MainManager.Instance.animationLayer = 1;
+            myAnim.SetLayerWeight(2, 0);
+            MainManager.Instance.animationLayer = 0;
         }
         else
         {
@@ -54,7 +58,8 @@ public class ClickPistol : MonoBehaviour
             Debug.Log("ACTIVATE PISTOL");
             MainManager.Instance.currentWeapon = 2;
 
-            MainManager.Instance.animationLayer = 3;
+            myAnim.SetLayerWeight(2, 1);
+            MainManager.Instance.animationLayer = 2;
         }
     }
 }

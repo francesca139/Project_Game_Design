@@ -14,9 +14,12 @@ public class ClickArco : MonoBehaviour
     public WeaponInventory wi;
     public Button button;
 
+    public Animator myAnim;
+
     public void Awake()
     {
         button = GameObject.Find("UIArco").GetComponent<Button>();
+        myAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
     public void FixedUpdate()
     {
@@ -46,7 +49,9 @@ public class ClickArco : MonoBehaviour
             Debug.Log("DEACTIVATE ARCO");
             MainManager.Instance.currentWeapon = 0;
 
-            MainManager.Instance.animationLayer = 1;
+            myAnim.SetLayerWeight(3, 0);
+            MainManager.Instance.animationLayer = 0;
+
         }
         else
         {
@@ -54,7 +59,9 @@ public class ClickArco : MonoBehaviour
             Debug.Log("ACTIVATE ARCO");
             MainManager.Instance.currentWeapon = 3;
 
-            MainManager.Instance.animationLayer = 4;
+           
+            myAnim.SetLayerWeight(3, 1);
+            MainManager.Instance.animationLayer = 3;
         }
     }
 
