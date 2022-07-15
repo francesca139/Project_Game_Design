@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FairyController : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class FairyController : MonoBehaviour
     private Transform transformB;
 
     public GameObject flipModel;
+
+    public Slider slider;
 
     bool firstDetection;
 
@@ -85,6 +88,7 @@ public class FairyController : MonoBehaviour
     private void Move()
     {
         Transform.localPosition = Vector3.MoveTowards(Transform.localPosition, nextPosition, moveSpeed * Time.deltaTime);
+        slider.transform.position = Vector3.MoveTowards(slider.transform.localPosition, nextPosition, moveSpeed * Time.deltaTime);
 
         if (Vector3.Distance(Transform.localPosition, nextPosition) <= 0.1)
         {

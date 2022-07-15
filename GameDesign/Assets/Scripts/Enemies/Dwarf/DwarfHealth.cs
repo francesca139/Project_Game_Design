@@ -8,10 +8,13 @@ public class DwarfHealth : MonoBehaviour
     public float fullHealth;
     public float currentHealth;
     public GameObject go;
+    public PlayerHealth ph;
+
+    public bool detected;
 
     public Slider enemyHb;
 
-    bool damaged;
+    private Coroutine co = null;
 
     void Start()
     {
@@ -20,8 +23,20 @@ public class DwarfHealth : MonoBehaviour
 
         enemyHb.maxValue = fullHealth;
         enemyHb.value = fullHealth;
+
+        detected = false;
     }
 
+    private void FixedUpdate()
+    {
+        if (!detected && co != null)
+        {
+            // StopCoroutine(DamagePlayer(ph));
+
+            StopCoroutine(co);
+            Debug.Log("Stopped");
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,6 +49,35 @@ public class DwarfHealth : MonoBehaviour
         if (go.tag == "Mazza")
             TakeDamage(MainManager.Instance.batDamage);
 
+        if (go.tag == "Player")
+        {
+           ph = go.GetComponent<PlayerHealth>();
+
+            detected = true;
+            co = StartCoroutine(DamagePlayer(ph));
+        }
+
+    }
+
+    private IEnumerator DamagePlayer(PlayerHealth ph)
+    {
+        var wait = new WaitForSeconds(1);
+
+        while (detected)
+        {
+            yield return wait;
+            ph.TakeDamage(1f);
+            Debug.Log("damage");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            detected = false;
+           
+        }
     }
 
     public void TakeDamage(float damage)
@@ -41,8 +85,6 @@ public class DwarfHealth : MonoBehaviour
         currentHealth = currentHealth - damage;
 
         enemyHb.value = currentHealth;
-
-        damaged = true;
 
         if (currentHealth <= 0)
         {

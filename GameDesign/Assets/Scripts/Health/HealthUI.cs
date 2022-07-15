@@ -15,7 +15,6 @@ public class HealthUI : MonoBehaviour
     //SLIDE BAR OF THE HEALTH
     public Slider playerHb;
 
-    bool damaged = false;
 
     void Start()
     {
@@ -27,7 +26,7 @@ public class HealthUI : MonoBehaviour
 
     void Update()
     {
-        damaged = false;
+        
     }
 
     public void addDamage(float damage) //nello script dei nemici
@@ -35,7 +34,7 @@ public class HealthUI : MonoBehaviour
         this.currentHealth -= damage;
 
         playerHb.value = this.currentHealth;
-        damaged = true;
+       
 
         if (currentHealth <= 0)
         {

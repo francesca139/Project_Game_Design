@@ -12,7 +12,6 @@ public class MushroomHealth : MonoBehaviour
 
     public Slider enemyHb;
 
-    bool damaged;
 
     void Start()
     {
@@ -42,8 +41,6 @@ public class MushroomHealth : MonoBehaviour
         currentHealth = currentHealth - damage;
 
         enemyHb.value = currentHealth;
-
-        damaged = true;
 
         if (currentHealth <= 0)
         {   

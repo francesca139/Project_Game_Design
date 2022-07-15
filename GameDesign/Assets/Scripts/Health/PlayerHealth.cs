@@ -14,9 +14,6 @@ public class PlayerHealth : MonoBehaviour
     public Image fill;
 
 
-    bool damaged = false;
-
-
     void Start()
     {
         this.fullHealth = MainManager.Instance.fullHealth;
@@ -45,7 +42,6 @@ public class PlayerHealth : MonoBehaviour
         playerHb.value = MainManager.Instance.currentHealth;
         MainManager.Instance.currentHealth = currentHealth;
 
-        damaged = true;
         fill.color = gradient.Evaluate(playerHb.normalizedValue);
 
         if (currentHealth <= 0)
