@@ -57,6 +57,9 @@ public class MainManager : MonoBehaviour
     public TextMeshProUGUI xArrow;
     public Button arcoButton;
 
+    public bool wingsActive;
+    public GameObject wings;
+
     public GameObject player;
     public WeaponInventory wi;
 
@@ -117,6 +120,9 @@ public class MainManager : MonoBehaviour
         weaponAvailable.Add(false);
         weapons[3].SetActive(false);
 
+        wings = GameObject.FindGameObjectWithTag("Wings");
+        // wings.SetActive(false);
+
         player = GameObject.FindGameObjectWithTag("Player");
         wi = player.GetComponent<WeaponInventory>();
         
@@ -153,7 +159,7 @@ public class MainManager : MonoBehaviour
 
             if (temp != null)
             {
-                if (temp.tag == "Stackable")
+               // if (temp.tag == "Stackable")
                 {
                     temp.SetActive(false);
                 }
@@ -188,6 +194,7 @@ public class MainManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
+            this.wingsActive = false;
 
             pistolButton = GameObject.Find("UIPistola").GetComponent<Button>();
             pistolImage = GameObject.Find("UIPistola").GetComponent<Image>();
@@ -220,6 +227,8 @@ public class MainManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Fairy")
         {
+            this.wingsActive = true;
+
             one = false;
             arcoButton = GameObject.Find("UIArco").GetComponent<Button>();
             arcoImage = GameObject.Find("UIArco").GetComponent<Image>();

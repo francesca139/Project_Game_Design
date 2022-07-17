@@ -16,6 +16,9 @@ public class DwarfHealth : MonoBehaviour
 
     private Coroutine co = null;
 
+    //per lo spawn
+    public GameObject elixirPrefab;
+
     void Start()
     {
         this.fullHealth = 5;
@@ -96,6 +99,11 @@ public class DwarfHealth : MonoBehaviour
     {
         MainManager.Instance.collected.Add(gameObject.name);
         MainManager.Instance.collected.Add(enemyHb.name);
+
+        //per lo spawn
+        GameObject spawned = Instantiate(elixirPrefab, transform.position, Quaternion.identity);
+        spawned.name = "elisir" + MainManager.Instance.numberOfElixirs.ToString();
+
 
         Debug.Log("Enemy Killed!!");
 

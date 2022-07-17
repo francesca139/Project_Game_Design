@@ -10,6 +10,9 @@ public class MushroomHealth : MonoBehaviour
     public float currentHealth;
     public GameObject go;
 
+    //per lo spawn
+    public GameObject elixirPrefab;
+
     public Slider enemyHb;
 
 
@@ -52,6 +55,10 @@ public class MushroomHealth : MonoBehaviour
     {
         MainManager.Instance.collected.Add(gameObject.name);
         MainManager.Instance.collected.Add(enemyHb.name);
+
+        //per lo spawn
+        GameObject spawned = Instantiate(elixirPrefab, transform.position, Quaternion.identity);
+        spawned.name = "elisir" + MainManager.Instance.numberOfElixirs.ToString();
 
         Debug.Log("Enemy Killed!!");
 

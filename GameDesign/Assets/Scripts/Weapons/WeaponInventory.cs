@@ -38,6 +38,10 @@ public class WeaponInventory : MonoBehaviour
     public Button arcoButton;
 
 
+    public bool wingsActive;
+    public GameObject wings;
+
+
     void Start()
     {
         weapons = MainManager.Instance.weapons;
@@ -118,6 +122,11 @@ public class WeaponInventory : MonoBehaviour
         arrowImage = MainManager.Instance.arrowImage;
         arrowText = MainManager.Instance.arrowText;
         xArrow = MainManager.Instance.xArrow;
+
+        wings = MainManager.Instance.wings;
+        wingsActive = MainManager.Instance.wingsActive;
+
+        wings.SetActive(wingsActive);
 
     }
 

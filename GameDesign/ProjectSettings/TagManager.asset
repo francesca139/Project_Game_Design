@@ -18,6 +18,7 @@ TagManager:
   - Fairy
   - Dwarf
   - Bullet
+  - Wings
   layers:
   - Default
   - TransparentFX
