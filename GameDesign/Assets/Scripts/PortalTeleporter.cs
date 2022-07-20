@@ -10,7 +10,12 @@ using UnityEngine.SceneManagement;
 public class PortalTeleporter : MonoBehaviour
 {
     public string nextSceneString;
+    public float nextPortalX;
+    public float nextPortalY;
+    public float nextPortalZ;
+   
     GameObject go;
+    Transform targetPosition;
 
 
     // bool load;
@@ -20,8 +25,11 @@ public class PortalTeleporter : MonoBehaviour
         
         go = other.gameObject;
 
-        if(other.gameObject.tag == "Player")
-          StartCoroutine(LoadScene());
+        if (other.gameObject.tag == "Player")
+        {
+            targetPosition = other.transform;
+            StartCoroutine(LoadScene()); 
+        }
 
 
     }
@@ -34,6 +42,8 @@ public class PortalTeleporter : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
 
         SceneManager.LoadScene(nextSceneString, LoadSceneMode.Single);
+
+        targetPosition.position = new Vector3(nextPortalX, nextPortalY, nextPortalZ);
 
         {
             yield return null;

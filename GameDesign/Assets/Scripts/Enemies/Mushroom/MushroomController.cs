@@ -16,7 +16,7 @@ public class MushroomController : MonoBehaviour
     Animator myAnim;
     Transform detectedPlayer;
 
-    bool Detected;
+    public bool Detected;
 
     public GameObject sporePrefab;
     public Transform sporeSpawn;
@@ -148,6 +148,7 @@ public class MushroomController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             firstDetection = false;
+            Detected = false;
         }
     }
 
