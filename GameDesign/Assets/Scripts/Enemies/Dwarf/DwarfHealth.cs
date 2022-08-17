@@ -5,108 +5,86 @@ using UnityEngine.UI;
 
 public class DwarfHealth : MonoBehaviour
 {
-    public float fullHealth;
-    public float currentHealth;
-    public GameObject go;
-    public PlayerHealth ph;
+    public float enemyMaxHealth;
+    public float damageModifier;
+    public GameObject drop;
+    public bool drops;
+    public AudioClip deathSound;
 
-    public bool detected;
+    float currentHealth;
 
-    public Slider enemyHb;
+    public Slider enemyHealthIndicator;
 
-    private Coroutine co = null;
-
-    //per lo spawn
-    public GameObject elixirPrefab;
+   // AudioSource enemyAS;
 
     void Start()
     {
-        this.fullHealth = 5;
-        this.currentHealth = fullHealth;
+        currentHealth = enemyMaxHealth;
+        enemyHealthIndicator.maxValue = enemyMaxHealth;
+        enemyHealthIndicator.value = currentHealth;
 
-        enemyHb.maxValue = fullHealth;
-        enemyHb.value = fullHealth;
-
-        detected = false;
+        // enemyAS = GetComponent<AudioSource>();
     }
 
-    private void FixedUpdate()
+    void Update()
     {
-        if (!detected && co != null)
+        /* QUESTA PARTE DI CODICE CONSERVIAMOLA NEL CASO IN CUI VOLESSIMO APPLICARE DEI PARTICELLARI 
+        
+        if (onFire && burnTime.time > nextBurn)
         {
-            // StopCoroutine(DamagePlayer(ph));
-
-            StopCoroutine(co);
-            Debug.Log("Stopped");
+            addDamage(burnDamage);
+            nextBurn += burnInterval;
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-
-        go = other.gameObject;
-
-        if (go.tag == "Arrow")
-            TakeDamage(MainManager.Instance.bulletDamage);
-
-        if (go.tag == "Mazza")
-            TakeDamage(MainManager.Instance.batDamage);
-
-        if (go.tag == "Player")
+        if (onFire && burnTime.time > endBurn)
         {
-           ph = go.GetComponent<PlayerHealth>();
-
-            detected = true;
-            co = StartCoroutine(DamagePlayer(ph));
+            onFire = false;
+            burnEffects.SetActive(false);
         }
 
+        */
     }
 
-    private IEnumerator DamagePlayer(PlayerHealth ph)
-    {
-        var wait = new WaitForSeconds(1);
+    // Classico calcolo dei danni
 
-        while (detected)
-        {
-            yield return wait;
-            ph.TakeDamage(1f);
-            Debug.Log("damage");
-        }
+    public void addDamage(float damage)
+    {
+        enemyHealthIndicator.gameObject.SetActive(true);
+        damage = damage * damageModifier;
+
+        if (damage <= 0) return;
+        currentHealth -= damage;
+
+        enemyHealthIndicator.value = currentHealth;
+       
+        // enemyAS.Play();
+        
+        if (currentHealth <= 0) makeDead();
     }
 
-    private void OnTriggerExit(Collider other)
+    /* Anche qua, ce lo teniamo nel momento in cui vogliamo inserire dei particellari
+     
+    public void damageFX (Vector3 point, Vector3 rotation)
     {
-        if (other.CompareTag("Player"))
-        {
-            detected = false;
-           
-        }
+        Instantiate(damageParticles, point, Quaternion.Euler(rotation));
     }
 
-    public void TakeDamage(float damage)
+    public void addFire()
     {
-        currentHealth = currentHealth - damage;
-
-        enemyHb.value = currentHealth;
-
-        if (currentHealth <= 0)
-        {
-            makeDead();
-        }
+        if (!canBurn) return;
+        onFire = true;
+        burnEffects.SetActive(true);
+        endBurn = burnTime.time + burnTime;
+        nextBurn = burnTime.time + burnInterval;
     }
 
-    public void makeDead()
+    */
+
+    void makeDead()
     {
-        MainManager.Instance.collected.Add(gameObject.name);
-        MainManager.Instance.collected.Add(enemyHb.name);
-
-        //per lo spawn
-        GameObject spawned = Instantiate(elixirPrefab, transform.position, Quaternion.identity);
-        spawned.name = "elisir" + MainManager.Instance.numberOfElixirs.ToString();
-
-
-        Debug.Log("Enemy Killed!!");
+        // AudioSource.PlayClipAtPoint(deathSound, transform.position, 0.15f);
 
         Destroy(gameObject.transform.root.gameObject);
+
+       //  if (drops) Instantiate(drop, transform.position, trasnform.rotation); Vediamo se i nemici lasciano cadere qualcosa quando vengono sconfitti
     }
 }

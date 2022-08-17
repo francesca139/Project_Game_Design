@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 
     // Movement Variables
@@ -45,12 +45,12 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(grounded && Input.GetButton("Jump"))
+        if (grounded && Input.GetButton("Jump"))
         {
             grounded = false;
             myAnim.SetBool("grounded", grounded);
             myRB.AddForce(new Vector3(0, jumpHeight, 0));
-        } 
+        }
 
         groundCollisions = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
         if (groundCollisions.Length > 0) grounded = true;
@@ -63,10 +63,10 @@ public class Movement : MonoBehaviour
 
         myRB.velocity = new Vector3(move * runSpeed, myRB.velocity.y, 0);
 
-
+        /*
         //AGGIUNTA PER ANIMAZIONI UPPER BODY (??)
-        if(MainManager.Instance.animationLayer == 2 )
-        {  
+        if (MainManager.Instance.animationLayer == 2)
+        {
             myAnim.SetBool("WithBat", true);
             myAnim.SetBool("WithGun", false);
             myAnim.SetBool("WithBow", false);
@@ -83,17 +83,17 @@ public class Movement : MonoBehaviour
             myAnim.SetBool("WithGun", false);
             myAnim.SetBool("WithBow", true);
         }
-
+        */
 
         if (move > 0 && !facingRight)
-	{
-	 Flip();
-	
-	}
-        else if (move < 0 && facingRight) 
-	{
-	  Flip();
-	}
+        {
+            Flip();
+
+        }
+        else if (move < 0 && facingRight)
+        {
+            Flip();
+        }
     }
 
     private void Flip()
