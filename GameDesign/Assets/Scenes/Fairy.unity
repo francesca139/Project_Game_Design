@@ -4340,8 +4340,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128609492}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 8afa6cf06ab3cdd44a759e5962ce2d70, type: 3}
+  m_Controller: {fileID: 9100000, guid: 62ce4b3931c56544898c5e22c50dd2b6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4379,11 +4379,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d689ddab3c9785149a8956e333d63eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMaxHealth: 0
-  damageModifier: 0
+  enemyMaxHealth: 100
+  damageModifier: 10
   drop: {fileID: 0}
   drops: 0
   deathSound: {fileID: 0}
+  myAnim: {fileID: 0}
   enemyHealthIndicator: {fileID: 0}
 --- !u!1 &130543666
 GameObject:
@@ -21384,15 +21385,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipModel: {fileID: 745803183}
-  detectionTime: 6
-  runSpeed: 1
+  detectionTime: 1
+  moveSpeed: 1
   facingLeft: 1
-  myAnim: {fileID: 0}
-  player: {fileID: 0}
-  detectedPlayer: {fileID: 0}
-  slider: {fileID: 0}
-  dwarf: {fileID: 0}
-  capsule: {fileID: 0}
+  myAnim: {fileID: 745803186}
+  detectedPlayer: {fileID: 628020483}
   Detected: 0
 --- !u!1001 &641705915
 PrefabInstance:
@@ -23699,6 +23696,11 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!95 &745803186 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 8afa6cf06ab3cdd44a759e5962ce2d70, type: 3}
+  m_PrefabInstance: {fileID: 745803180}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &747207245
 GameObject:
   m_ObjectHideFlags: 0
@@ -58591,7 +58593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   damageRate: 1
-  pushBackForce: 10
+  pushBackForce: 0
 --- !u!135 &1922708870
 SphereCollider:
   m_ObjectHideFlags: 0

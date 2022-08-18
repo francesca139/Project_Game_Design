@@ -11,6 +11,8 @@ public class DwarfHealth : MonoBehaviour
     public bool drops;
     public AudioClip deathSound;
 
+    public Animator myAnim;
+
     float currentHealth;
 
     public Slider enemyHealthIndicator;
@@ -22,6 +24,7 @@ public class DwarfHealth : MonoBehaviour
         currentHealth = enemyMaxHealth;
         enemyHealthIndicator.maxValue = enemyMaxHealth;
         enemyHealthIndicator.value = currentHealth;
+        myAnim = GetComponentInChildren<Animator>();
 
         // enemyAS = GetComponent<AudioSource>();
     }
@@ -82,6 +85,8 @@ public class DwarfHealth : MonoBehaviour
     void makeDead()
     {
         // AudioSource.PlayClipAtPoint(deathSound, transform.position, 0.15f);
+
+        myAnim.SetBool("dead", true);
 
         Destroy(gameObject.transform.root.gameObject);
 

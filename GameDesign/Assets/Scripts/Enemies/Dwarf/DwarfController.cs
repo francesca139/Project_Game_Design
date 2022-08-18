@@ -9,54 +9,108 @@ public class DwarfController : MonoBehaviour
     public GameObject flipModel;
 
     public float detectionTime;
-   
 
-    public float runSpeed = 0.5f;
+    bool firstDetection;
+    bool Attack;
+
+    /* Variabili per Audio
+    
+    public AudioClip[] idleSounds;
+    public float idleSoundTime;
+    AudioSource enemyMovementAS;
+    float nextIdleSound = 0f;
+    */
+
+    public float moveSpeed;
     public bool facingLeft = true;
 
     Rigidbody myRB;
     public Animator myAnim;
-    public GameObject player;
     public Transform detectedPlayer;
-    public Slider slider;
-   
-
-    public GameObject dwarf;
-    public GameObject capsule;
 
     public bool Detected;
 
+    /* Non so cosa siano queste variabili 
+    
+    public GameObject player;
+    public Slider slider;
+    public GameObject dwarf;
+    public GameObject capsule;
 
-    // Start is called before the first frame update
+    */
+
     void Start()
     {
         myRB = GetComponentInParent<Rigidbody>();
-
-
-        dwarf = GameObject.Find("Gnomo");
-        capsule = GameObject.Find("DwarfDamage");
         myAnim = GetComponentInParent<Animator>();
 
-        Detected = false;
+        // enemyMovementAS = GetComponent<AudioSource>
 
+        Detected = false;
+        Attack = false;
+        firstDetection = false;
         if (Random.Range(0, 10) > 5) Flip();
+
+        /* 
+        dwarf = GameObject.Find("Gnomo");
+        capsule = GameObject.Find("DwarfDamage");
+        */
 
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-      /*  if (Detected)
+        if (Detected)
         {
-            if (detectedPlayer.position.x < transform.position.x && facingLeft) Flip();
-            else if (detectedPlayer.position.x > transform.position.x && !facingLeft) Flip();
+            
+            if (detectedPlayer.position.x > transform.position.x && facingLeft)
+            {
+                Flip();
+            }
+            else if (detectedPlayer.position.x < transform.position.x && !facingLeft)
+            {
+                Flip();
+            }
 
             if (!firstDetection)
             {
                 firstDetection = true;
             }
-        } */
+        }
+        if (Detected && !facingLeft) 
+        {
+            if (detectedPlayer.position.x - transform.position.x < 0.1)
+            {
+                Attack = true;
+                myAnim.SetBool("attack", Attack);
+                myRB.velocity = new Vector3(0.1, myRB.velocity.y, 0);
+            }
+            else
+            {
+                Attack = false;
+                myAnim.SetBool("attack", Attack); 
+                myRB.velocity = new Vector3(moveSpeed, myRB.velocity.y, 0);
+            }
+        }
+       
+        else if (Detected && facingLeft)
+        {
+            if (detectedPlayer.position.x - transform.position.x < 0.1)
+            {
+                Attack = true;
+                myAnim.SetBool("attack", Attack);
+                myRB.velocity = new Vector3(-1, myRB.velocity.y, 0);
+            }
+            else
+            {
+                Attack = false;
+                myAnim.SetBool("attack", Attack);
+                myRB.velocity = new Vector3((moveSpeed * -1), myRB.velocity.y, 0);
+            }
+        }
 
+        /*
         if (Detected)
         {
             Vector3 pos = player.transform.position;
@@ -80,18 +134,21 @@ public class DwarfController : MonoBehaviour
         {
             capsule.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
+
+        */
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !Detected)
         {
-            player = other.gameObject;
+            // player = other.gameObject;
 
             Detected = true;
             detectedPlayer = other.transform;
             myAnim.SetBool("detected", Detected);
 
+            
             if (detectedPlayer.position.x < transform.position.x && facingLeft) Flip();
             else if (detectedPlayer.position.x > transform.position.x && !facingLeft) Flip();
 
@@ -103,7 +160,7 @@ public class DwarfController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Detected = false;
+            firstDetection = false;
         }
     }
 
