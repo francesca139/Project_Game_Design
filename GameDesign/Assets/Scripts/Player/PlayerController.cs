@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
 
     // Movement Variables
     public float runSpeed;
-    Rigidbody myRB;
-    Animator myAnim;
+    public Rigidbody myRB;
+    public Animator myAnim;
     bool facingRight;
 
     // Jumping Variables
@@ -34,12 +34,12 @@ public class PlayerController : MonoBehaviour
         if (!exists)
         {
             exists = true;
-            DontDestroyOnLoad(transform.gameObject);
+           // DontDestroyOnLoad(transform.gameObject);
         }
         else
         {
             Destroy(gameObject);
-        }   //aggiunto per il passaggio tra i mondi
+        }   //aggiunto per il passaggio tra i mondi  
     }
 
     // Update is called once per frame

@@ -84,7 +84,7 @@ public class DwarfController : MonoBehaviour
             {
                 Attack = true;
                 myAnim.SetBool("attack", Attack);
-                myRB.velocity = new Vector3(0.1, myRB.velocity.y, 0);
+                myRB.velocity = new Vector3(0.1f, myRB.velocity.y, 0);
             }
             else
             {
