@@ -17,22 +17,26 @@ public class MushroomController : MonoBehaviour
     Transform detectedPlayer;
 
     public bool Detected;
+    public bool jumped;
 
     public GameObject sporePrefab;
     public Transform sporeSpawn;
     public GameObject player;
+    private MushroomJump mj;
+    private GameObject mushroom;
 
     public float timeBetween;
     public float lifeTime;
-
-    public int count;
 
 
     // Start is called before the first frame update
     void Start()
     {
+
         myRB = GetComponentInParent<Rigidbody>();
         myAnim = GetComponentInParent<Animator>();
+        mj = GameObject.Find("SporeSpawn").GetComponent<MushroomJump>();
+        mushroom = GameObject.Find("Fungo");
 
         Detected = false;
         firstDetection = false;
@@ -40,34 +44,25 @@ public class MushroomController : MonoBehaviour
         if (Random.Range(0, 10) > 5) Flip();
 
         player = GameObject.FindGameObjectWithTag("Player");
-        this.timeBetween = 1f;
+        this.timeBetween = 2f;
         this.lifeTime = 3f;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Detected)
+        if (Detected)
         {
-            if (detectedPlayer.position.x < transform.position.x && facingLeft) Flip();
-            else if (detectedPlayer.position.x > transform.position.x && !facingLeft) Flip();
+            if (detectedPlayer.position.x < mushroom.transform.position.x && !facingLeft) Flip();
+            else if (detectedPlayer.position.x > mushroom.transform.position.x && facingLeft) Flip();
 
-            if(!firstDetection)
+            if (!firstDetection)
             {
                 firstDetection = true;
             }
         }
 
-        if(Detected && !facingLeft)
-        {
-            myRB.velocity = new Vector3(runSpeed * -1, 0, 0);
-                //myRB.velocity.y, 0);
-        }
-        else if (Detected && facingLeft)
-        {
-            myRB.velocity = new Vector3(runSpeed, 0, 0);
-                //myRB.velocity.y, 0);
-        }
+        jumped = mj.jumped;
 
 
     }
@@ -99,8 +94,7 @@ public class MushroomController : MonoBehaviour
 
             {
                 Vector3 Vo = CalculateVelocity(player.transform.position, sporeSpawn.transform.position, 1f);
-                transform.rotation = Quaternion.LookRotation(Vo);
-                count++;
+               // transform.rotation = Quaternion.LookRotation(Vo);
 
                 Rigidbody sporePrefabRb = sporePrefab.GetComponent<Rigidbody>();
                 Rigidbody obj = Instantiate(sporePrefabRb, sporeSpawn.position, Quaternion.identity);
@@ -111,6 +105,14 @@ public class MushroomController : MonoBehaviour
                  StartCoroutine(DestroySporeAfterTime(obj.gameObject, this.lifeTime));
 
              }
+
+            while (jumped)
+            {
+                yield return new WaitForSeconds(5f);
+                Debug.Log("jumped");
+                jumped = false;
+                //aggiungere animazione del tramortimento
+            }
         }
     }
 

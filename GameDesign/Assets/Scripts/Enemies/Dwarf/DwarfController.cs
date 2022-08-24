@@ -28,16 +28,15 @@ public class DwarfController : MonoBehaviour
     public Animator myAnim;
     public Transform detectedPlayer;
 
-    public bool Detected;
-
-    /* Non so cosa siano queste variabili 
-    
     public GameObject player;
-    public Slider slider;
+
+    public bool Detected;
+    public bool dhLDeteced;
+
+
     public GameObject dwarf;
     public GameObject capsule;
-
-    */
+    public DwarfHealthLisa dhL;
 
     void Start()
     {
@@ -51,16 +50,18 @@ public class DwarfController : MonoBehaviour
         firstDetection = false;
         if (Random.Range(0, 10) > 5) Flip();
 
-        /* 
-        dwarf = GameObject.Find("Gnomo");
+        dwarf = GameObject.Find("Dwarf");
         capsule = GameObject.Find("DwarfDamage");
-        */
+        dhL = GameObject.Find("Gnomo").GetComponent<DwarfHealthLisa>();
+
 
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        dhLDeteced = dhL.detected;
+
         if (Detected)
         {
             
@@ -78,71 +79,65 @@ public class DwarfController : MonoBehaviour
                 firstDetection = true;
             }
         }
-        if (Detected && !facingLeft) 
-        {
-            if (detectedPlayer.position.x - transform.position.x < 0.1)
-            {
-                Attack = true;
-                myAnim.SetBool("attack", Attack);
-                myRB.velocity = new Vector3(0.1f, myRB.velocity.y, 0);
-            }
-            else
-            {
-                Attack = false;
-                myAnim.SetBool("attack", Attack); 
-                myRB.velocity = new Vector3(moveSpeed, myRB.velocity.y, 0);
-            }
-        }
-       
-        else if (Detected && facingLeft)
-        {
-            if (detectedPlayer.position.x - transform.position.x < 0.1)
-            {
-                Attack = true;
-                myAnim.SetBool("attack", Attack);
-                myRB.velocity = new Vector3(-1, myRB.velocity.y, 0);
-            }
-            else
-            {
-                Attack = false;
-                myAnim.SetBool("attack", Attack);
-                myRB.velocity = new Vector3((moveSpeed * -1), myRB.velocity.y, 0);
-            }
-        }
 
-        /*
         if (Detected)
         {
-            Vector3 pos = player.transform.position;
-            pos.y = dwarf.transform.position.y;
-            float distance = transform.position.x - player.transform.position.x;
+            if (!facingLeft)
+            {
 
-            if (distance < 0 && facingLeft)
-                Flip();
-            if (distance > 0 && !facingLeft)
-                Flip();
+                if (dhL.detected)
+                {
 
-            dwarf.transform.position = Vector3.MoveTowards(dwarf.transform.position, pos, runSpeed * Time.deltaTime);
-            capsule.transform.position = Vector3.MoveTowards(dwarf.transform.position, pos, runSpeed * Time.deltaTime);
+                    Attack = true;
+                    myAnim.SetBool("attack", true);
 
-            Vector3 posSlider = pos;
-            posSlider.y = slider.transform.position.y;
-            slider.transform.position = Vector3.MoveTowards(slider.transform.position, posSlider, runSpeed * Time.deltaTime);
-            
+                    myRB.velocity = new Vector3(0, myRB.velocity.y, 0);
+                    capsule.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
+
+
+                }
+                else
+                {
+                    Attack = false;
+                    myAnim.SetBool("attack", false);
+                    myRB.velocity = new Vector3(moveSpeed, myRB.velocity.y, 0);
+                    capsule.GetComponent<Rigidbody>().velocity = new Vector3(moveSpeed, myRB.velocity.y, 0);
+                }
+            }
+
+
+            else
+            {
+                if (dhL.detected)
+                {
+                    Attack = true;
+                    myAnim.SetBool("attack", true);
+                    myRB.velocity = new Vector3(0, myRB.velocity.y, 0);
+                    capsule.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
+                }
+                else
+                {
+                    Attack = false;
+                    myAnim.SetBool("attack", false);
+                    myRB.velocity = new Vector3((moveSpeed * -1), myRB.velocity.y, 0);
+                    capsule.GetComponent<Rigidbody>().velocity = new Vector3((moveSpeed * -1), myRB.velocity.y, 0);
+                }
+            }
         }
         else
         {
+            Attack = false;
+            dwarf.GetComponent<Rigidbody>().velocity = Vector3.zero;
             capsule.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            myAnim.Play("Idle");
         }
-
-        */
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !Detected)
         {
-            // player = other.gameObject;
+            player = other.gameObject;
 
             Detected = true;
             detectedPlayer = other.transform;
@@ -161,6 +156,7 @@ public class DwarfController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             firstDetection = false;
+            Detected = false;
         }
     }
 

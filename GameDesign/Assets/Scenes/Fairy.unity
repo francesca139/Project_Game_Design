@@ -351,7 +351,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1770996388}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &16413572
 PrefabInstance:
@@ -7699,7 +7699,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 7.5, y: 0}
   m_SizeDelta: {x: 25, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12040,6 +12040,25 @@ CapsuleCollider:
   m_Height: 2.8
   m_Direction: 1
   m_Center: {x: 0, y: 1.4, z: 0}
+--- !u!114 &362273287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362273285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a92b46c81d9bf429c58edcd4e3dd1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullHealth: 0
+  currentHealth: 0
+  go: {fileID: 0}
+  ph: {fileID: 0}
+  detected: 0
+  enemyHb: {fileID: 406112322}
+  elixirPrefab: {fileID: 0}
 --- !u!1001 &366624815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21324,7 +21343,12 @@ MonoBehaviour:
   facingLeft: 1
   myAnim: {fileID: 745803186}
   detectedPlayer: {fileID: 628020483}
+  player: {fileID: 0}
   Detected: 0
+  dhLDeteced: 0
+  dwarf: {fileID: 0}
+  capsule: {fileID: 0}
+  dhL: {fileID: 0}
 --- !u!1001 &641705915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23624,6 +23648,7 @@ MonoBehaviour:
   go: {fileID: 0}
   ph: {fileID: 0}
   detected: 0
+  first: 0
   enemyHb: {fileID: 311755036}
   elixirPrefab: {fileID: 0}
 --- !u!136 &745803185
@@ -23636,10 +23661,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.7
-  m_Height: 3
+  m_Radius: 1.5
+  m_Height: 5
   m_Direction: 1
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!95 &745803186 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 8afa6cf06ab3cdd44a759e5962ce2d70, type: 3}
@@ -23681,7 +23706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 21.5, y: 3.5}
+  m_AnchoredPosition: {x: 21.5, y: 3.02}
   m_SizeDelta: {x: 30, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &747207247
@@ -27843,6 +27868,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 897210176}
+  - component: {fileID: 897210178}
+  - component: {fileID: 897210177}
   m_Layer: 0
   m_Name: SporeSpawn
   m_TagString: Untagged
@@ -27864,6 +27891,35 @@ Transform:
   m_Father: {fileID: 1030002746}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &897210177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897210175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f618e7d47a6e9040a8ad577eacdc887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumped: 0
+  firstJump: 0
+  exited: 0
+--- !u!136 &897210178
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897210175}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.1
+  m_Height: 0.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &903800457
 GameObject:
   m_ObjectHideFlags: 0
@@ -28044,6 +28100,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 086b80ae95e2e8f42aa86d2fbc06603b, type: 3}
   m_PrefabInstance: {fileID: 904013456}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &904013459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904013458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5eb93a939d56b40814f558e304edde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullHealth: 0
+  currentHealth: 0
+  go: {fileID: 0}
+  elixirPrefab: {fileID: 0}
+  enemyHb: {fileID: 1471698709}
 --- !u!136 &904013460
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28058,6 +28131,22 @@ CapsuleCollider:
   m_Height: 7
   m_Direction: 1
   m_Center: {x: 0, y: 3.3, z: 0}
+--- !u!54 &904013461
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904013458}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 124
+  m_CollisionDetection: 0
 --- !u!1001 &906407274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29895,7 +29984,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 7.5, y: 0}
   m_SizeDelta: {x: 25, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -32271,7 +32360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1030002746
 Transform:
   m_ObjectHideFlags: 0
@@ -32318,7 +32407,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030002745}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -33118,7 +33207,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1770996388}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1042934814
 SphereCollider:
@@ -36893,8 +36982,8 @@ RectTransform:
   m_Father: {fileID: 229194371}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -36968,8 +37057,8 @@ RectTransform:
   m_Father: {fileID: 1898801302}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -43130,6 +43219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1400133561}
   - component: {fileID: 1400133562}
+  - component: {fileID: 1400133563}
   m_Layer: 0
   m_Name: FairyDetection
   m_TagString: Untagged
@@ -43149,7 +43239,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1770996388}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1400133562
 BoxCollider:
@@ -43164,6 +43254,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.317952, y: 7.670554, z: 20.032688}
   m_Center: {x: 0.058512747, y: -0.054420948, z: -1.3137999}
+--- !u!114 &1400133563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400133560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec94f7a3a08841ef84b044705ac91b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  Transform: {fileID: 362273284}
+  transformB: {fileID: 14225429}
+  flipModel: {fileID: 362273285}
+  canvasSlider: {fileID: 1918899992}
+  myAnim: {fileID: 0}
+  sporePrefab: {fileID: 0}
+  sporeSpawn: {fileID: 1838975595}
+  timeBetween: 0
+  lifeTime: 0
 --- !u!1001 &1404247988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44789,7 +44901,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.08}
   m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1471698709
@@ -45651,7 +45763,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 5.5}
+  m_AnchoredPosition: {x: 0, y: 5.7}
   m_SizeDelta: {x: 3, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1498628280
@@ -54138,7 +54250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1770996388
 Transform:
   m_ObjectHideFlags: 0
@@ -54152,6 +54264,7 @@ Transform:
   m_Children:
   - {fileID: 1918899993}
   - {fileID: 362273284}
+  - {fileID: 1838975595}
   - {fileID: 14225429}
   - {fileID: 1042934813}
   - {fileID: 1400133561}
@@ -55529,6 +55642,36 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1838975594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1838975595}
+  m_Layer: 0
+  m_Name: FairySpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1838975595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838975594}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 11.9, y: 7, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1770996388}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1844352509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58426,6 +58569,7 @@ GameObject:
   - component: {fileID: 1922708868}
   - component: {fileID: 1922708870}
   - component: {fileID: 1922708869}
+  - component: {fileID: 1922708871}
   m_Layer: 0
   m_Name: DwarfDamage
   m_TagString: Untagged
@@ -58475,6 +58619,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: -0.17589188, y: 0, z: 0}
+--- !u!54 &1922708871
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922708867}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 124
+  m_CollisionDetection: 0
 --- !u!1001 &1929221600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62386,6 +62546,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2104609881}
   - component: {fileID: 2104609883}
+  - component: {fileID: 2104609882}
   m_Layer: 0
   m_Name: MushroomDetection
   m_TagString: Untagged
@@ -62407,6 +62568,29 @@ Transform:
   m_Father: {fileID: 1030002746}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2104609882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104609880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd448b081b2745d8bf0f92ee1f97d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flipModel: {fileID: 904013458}
+  detectionTime: 0
+  runSpeed: 0
+  facingLeft: 1
+  Detected: 0
+  jumped: 0
+  sporePrefab: {fileID: 0}
+  sporeSpawn: {fileID: 897210176}
+  player: {fileID: 0}
+  timeBetween: 0
+  lifeTime: 0
 --- !u!65 &2104609883
 BoxCollider:
   m_ObjectHideFlags: 0

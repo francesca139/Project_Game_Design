@@ -11,6 +11,7 @@ public class DwarfHealthLisa : MonoBehaviour
     public PlayerHealth ph;
 
     public bool detected;
+    public bool first;
 
     public Slider enemyHb;
 
@@ -26,6 +27,7 @@ public class DwarfHealthLisa : MonoBehaviour
 
         enemyHb.maxValue = fullHealth;
         enemyHb.value = fullHealth;
+        first = true;
 
         detected = false;
     }
@@ -36,8 +38,10 @@ public class DwarfHealthLisa : MonoBehaviour
         {
             // StopCoroutine(DamagePlayer(ph));
 
+
             StopCoroutine(co);
             Debug.Log("Stopped");
+            first = true;
         }
     }
 

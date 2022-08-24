@@ -79,6 +79,14 @@ public class MainManager : MonoBehaviour
 
     public List<string> collected;
 
+    //dialogo
+    public GameObject popUpBox;
+    public bool popUpActive;
+    public Image popUpBoxImage;
+    public TextMeshProUGUI popUpText;
+    public Button popUpButton;
+    public Image popUpButtonImage;
+
 
     private void Awake()
     {
@@ -204,6 +212,14 @@ public class MainManager : MonoBehaviour
             bulletButton = GameObject.Find("InfoPistola").GetComponent<Button>();
             this.sottoBullet = GameObject.Find("InfoPistola").GetComponent<Image>();
 
+
+            //PER IL MOMENTO SOLO QUI
+            //   popUpBox = GameObject.Find("PopUpBox");
+            popUpBoxImage = GameObject.Find("PopUpBox").GetComponent<Image>();
+            popUpButton = GameObject.Find("PopUpButton").GetComponent<Button>();
+            popUpButtonImage = GameObject.Find("PopUpButton").GetComponent<Image>();
+            popUpText = GameObject.Find("PopUpText").GetComponent<TextMeshProUGUI>();
+ 
             elixirButton = GameObject.Find("InfoElixirs").GetComponent<Button>(); //solo nel mondo1
 
             if (!weaponAvailable[2])
@@ -216,6 +232,14 @@ public class MainManager : MonoBehaviour
 
                 bulletButton.enabled = false;
             }
+        }
+
+        if (!popUpActive)
+        {
+            popUpBoxImage.enabled = false;
+            popUpText.enabled = false;
+            popUpButton.enabled = false;
+            popUpButtonImage.enabled = false;
         }
 
         elixirImage = GameObject.Find("ImageElixirs").GetComponent<Image>();
