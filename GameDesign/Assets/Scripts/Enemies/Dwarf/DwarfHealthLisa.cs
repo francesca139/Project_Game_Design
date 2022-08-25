@@ -51,7 +51,7 @@ public class DwarfHealthLisa : MonoBehaviour
         go = other.gameObject;
 
         if (go.tag == "Arrow")
-            TakeDamage(MainManager.Instance.bulletDamage);
+            TakeDamage(MainManager.Instance.arrowDamage);
 
         if (go.tag == "Mazza")
             TakeDamage(MainManager.Instance.batDamage);

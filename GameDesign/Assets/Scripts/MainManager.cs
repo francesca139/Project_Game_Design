@@ -129,7 +129,7 @@ public class MainManager : MonoBehaviour
         weapons[3].SetActive(false);
 
         wings = GameObject.FindGameObjectWithTag("Wings");
-        // wings.SetActive(false);
+       // wings.SetActive(false);
 
         player = GameObject.FindGameObjectWithTag("Player");
         wi = player.GetComponent<WeaponInventory>();
@@ -228,7 +228,6 @@ public class MainManager : MonoBehaviour
             }
         }
 
-        //PER IL MOMENTO SOLO QUI
         //   popUpBox = GameObject.Find("PopUpBox");
         popUpBoxImage = GameObject.Find("PopUpBox").GetComponent<Image>();
         popUpButton = GameObject.Find("PopUpButton").GetComponent<Button>();
