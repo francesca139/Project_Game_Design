@@ -8,7 +8,7 @@ public class DwarfHealthLisa : MonoBehaviour
     public float fullHealth;
     public float currentHealth;
     public GameObject go;
-    public PlayerHealth ph;
+    public PlayerHealthLisa ph;
 
     public bool detected;
     public bool first;
@@ -58,7 +58,7 @@ public class DwarfHealthLisa : MonoBehaviour
 
         if (go.tag == "Player")
         {
-           ph = go.GetComponent<PlayerHealth>();
+           ph = go.GetComponent<PlayerHealthLisa>();
 
             detected = true;
             co = StartCoroutine(DamagePlayer(ph));
@@ -66,7 +66,7 @@ public class DwarfHealthLisa : MonoBehaviour
 
     }
 
-    private IEnumerator DamagePlayer(PlayerHealth ph)
+    private IEnumerator DamagePlayer(PlayerHealthLisa ph)
     {
         var wait = new WaitForSeconds(1);
 

@@ -19,7 +19,7 @@ public class Spore : MonoBehaviour
             Debug.Log("Hit!!!!!");
 
             pl = other.gameObject;
-            PlayerHealth ph = pl.GetComponent<PlayerHealth>();
+            PlayerHealthLisa ph = pl.GetComponent<PlayerHealthLisa>();
 
             ph.TakeDamage(damage);
         }

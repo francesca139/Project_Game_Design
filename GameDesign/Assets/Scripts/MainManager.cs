@@ -213,12 +213,6 @@ public class MainManager : MonoBehaviour
             this.sottoBullet = GameObject.Find("InfoPistola").GetComponent<Image>();
 
 
-            //PER IL MOMENTO SOLO QUI
-            //   popUpBox = GameObject.Find("PopUpBox");
-            popUpBoxImage = GameObject.Find("PopUpBox").GetComponent<Image>();
-            popUpButton = GameObject.Find("PopUpButton").GetComponent<Button>();
-            popUpButtonImage = GameObject.Find("PopUpButton").GetComponent<Image>();
-            popUpText = GameObject.Find("PopUpText").GetComponent<TextMeshProUGUI>();
  
             elixirButton = GameObject.Find("InfoElixirs").GetComponent<Button>(); //solo nel mondo1
 
@@ -233,6 +227,13 @@ public class MainManager : MonoBehaviour
                 bulletButton.enabled = false;
             }
         }
+
+        //PER IL MOMENTO SOLO QUI
+        //   popUpBox = GameObject.Find("PopUpBox");
+        popUpBoxImage = GameObject.Find("PopUpBox").GetComponent<Image>();
+        popUpButton = GameObject.Find("PopUpButton").GetComponent<Button>();
+        popUpButtonImage = GameObject.Find("PopUpButton").GetComponent<Image>();
+        popUpText = GameObject.Find("PopUpText").GetComponent<TextMeshProUGUI>();
 
         if (!popUpActive)
         {

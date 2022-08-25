@@ -11,7 +11,7 @@ public class DwarfController : MonoBehaviour
     public float detectionTime;
 
     bool firstDetection;
-    bool Attack;
+    public bool Attack;
 
     /* Variabili per Audio
     
@@ -24,10 +24,9 @@ public class DwarfController : MonoBehaviour
     public float moveSpeed;
     public bool facingLeft = true;
 
-    Rigidbody myRB;
+    public Rigidbody myRB;
     public Animator myAnim;
     public Transform detectedPlayer;
-
     public GameObject player;
 
     public bool Detected;
@@ -50,21 +49,21 @@ public class DwarfController : MonoBehaviour
         firstDetection = false;
         if (Random.Range(0, 10) > 5) Flip();
 
+
         dwarf = GameObject.Find("Dwarf");
         capsule = GameObject.Find("DwarfDamage");
         dhL = GameObject.Find("Gnomo").GetComponent<DwarfHealthLisa>();
-
 
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        dhLDeteced = dhL.detected;
 
+        dhLDeteced = dhL.detected;
         if (Detected)
         {
-            
+
             if (detectedPlayer.position.x > transform.position.x && facingLeft)
             {
                 Flip();
@@ -79,7 +78,6 @@ public class DwarfController : MonoBehaviour
                 firstDetection = true;
             }
         }
-
         if (Detected)
         {
             if (!facingLeft)
@@ -129,8 +127,37 @@ public class DwarfController : MonoBehaviour
             Attack = false;
             dwarf.GetComponent<Rigidbody>().velocity = Vector3.zero;
             capsule.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            // myAnim.enabled = false;
+            // myAnim.StopPlayback();
             myAnim.Play("Idle");
         }
+
+        /*
+        if (Detected)
+        {
+            Vector3 pos = player.transform.position;
+            pos.y = dwarf.transform.position.y;
+            float distance = transform.position.x - player.transform.position.x;
+
+            if (distance < 0 && facingLeft)
+                Flip();
+            if (distance > 0 && !facingLeft)
+                Flip();
+
+            dwarf.transform.position = Vector3.MoveTowards(dwarf.transform.position, pos, runSpeed * Time.deltaTime);
+            capsule.transform.position = Vector3.MoveTowards(dwarf.transform.position, pos, runSpeed * Time.deltaTime);
+
+            Vector3 posSlider = pos;
+            posSlider.y = slider.transform.position.y;
+            slider.transform.position = Vector3.MoveTowards(slider.transform.position, posSlider, runSpeed * Time.deltaTime);
+            
+        }
+        else
+        {
+            capsule.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
+
+        */
     }
 
     private void OnTriggerEnter(Collider other)
@@ -143,7 +170,7 @@ public class DwarfController : MonoBehaviour
             detectedPlayer = other.transform;
             myAnim.SetBool("detected", Detected);
 
-            
+
             if (detectedPlayer.position.x < transform.position.x && facingLeft) Flip();
             else if (detectedPlayer.position.x > transform.position.x && !facingLeft) Flip();
 
