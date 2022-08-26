@@ -7,7 +7,9 @@ public class HumanHealth : MonoBehaviour
 {
   
     public GameObject go;
+    public GameObject mask;
     public PlayerHealthLisa ph;
+    private PlayerInventory pi;
     public HumanController hc;
 
     public bool detected;
@@ -26,12 +28,15 @@ public class HumanHealth : MonoBehaviour
         first = true;
 
         detected = false;
+        pi = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+        hc = GameObject.Find("HumanDetection").GetComponent<HumanController>();
+        mask = GameObject.Find("Maschera");
 
     }
 
     private void FixedUpdate()
     {
-        if (!detected && co != null)
+        if (!detected && co != null )
         {
             // StopCoroutine(DamagePlayer(ph));
 
@@ -54,12 +59,11 @@ public class HumanHealth : MonoBehaviour
             TakeDamage(MainManager.Instance.batDamage);
 
         if (go.tag == "Elixir")
-            //  TakeDamage(MainManager.Instance.elixirEffect);
             makeSaved();
 
 
 
-        if (go.tag == "Player")
+        if (go.tag == "Player" && !hc.free)
         {
             ph = go.GetComponent<PlayerHealthLisa>();
 
@@ -97,9 +101,12 @@ public class HumanHealth : MonoBehaviour
 
     public void makeSaved()
     {
-       
-        MainManager.Instance.numberOfPeople++;
+        if (co != null)
+            StopCoroutine(co);
+
+        pi.PersonSaved();
         hc.Saved();
+        Debug.Log("Saved");
     }
 
     public void makeDead()
