@@ -89,7 +89,7 @@ public class HumanController : MonoBehaviour
                 {
 
                     Attack = true;
-                  //  myAnim.SetBool("attack", true);
+                    myAnim.SetBool("attack", true);
 
                     myRB.velocity = new Vector3(0, myRB.velocity.y, 0);
                     capsule.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
@@ -100,7 +100,7 @@ public class HumanController : MonoBehaviour
                 else
                 {
                     Attack = false;
-                  //  myAnim.SetBool("attack", false);
+                    myAnim.SetBool("attack", false);
                     myRB.velocity = new Vector3(moveSpeed, myRB.velocity.y, 0);
                     capsule.GetComponent<Rigidbody>().velocity = new Vector3(moveSpeed, myRB.velocity.y, 0);
                     mask.GetComponent<Rigidbody>().velocity = new Vector3(moveSpeed, myRB.velocity.y, 0);
@@ -113,7 +113,7 @@ public class HumanController : MonoBehaviour
                 if (hhL.detected)
                 {
                     Attack = true;
-                  //  myAnim.SetBool("attack", true);
+                    myAnim.SetBool("attack", true);
                     myRB.velocity = new Vector3(0, myRB.velocity.y, 0);
                     capsule.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
                     mask.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
@@ -121,7 +121,7 @@ public class HumanController : MonoBehaviour
                 else
                 {
                     Attack = false;
-                 //   myAnim.SetBool("attack", false);
+                    myAnim.SetBool("attack", false);
                     myRB.velocity = new Vector3((moveSpeed * -1), myRB.velocity.y, 0);
                     capsule.GetComponent<Rigidbody>().velocity = new Vector3((moveSpeed * -1), myRB.velocity.y, 0);
                     mask.GetComponent<Rigidbody>().velocity = new Vector3((moveSpeed * -1), myRB.velocity.y, 0);
@@ -135,7 +135,7 @@ public class HumanController : MonoBehaviour
             capsule.GetComponent<Rigidbody>().velocity = Vector3.zero;
             // myAnim.enabled = false;
             // myAnim.StopPlayback();
-            myAnim.Play("Idle");
+            myAnim.Play("Idle1");
         }
 
     }

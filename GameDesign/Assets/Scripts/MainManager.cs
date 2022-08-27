@@ -106,7 +106,7 @@ public class MainManager : MonoBehaviour
         //le armi che si trovano nella scena invece non vanno taggate ma basta il nome per il confronto
         //Ogni arma deve essere aggiunta nella gerarchia singolarmente e non come ITEM in una folder
         //Ogni elemento che viene raccolto deve avere il tag STACKABLE (a parte le armi sulla mano)
-        //_____________________________________________________________________________________________________________
+        //___________________________________________________________________________________________________________
 
         GameObject empty = GameObject.FindGameObjectWithTag("EmptyHand");
         weapons.Add(empty);
