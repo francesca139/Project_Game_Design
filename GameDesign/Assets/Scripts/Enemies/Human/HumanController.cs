@@ -35,6 +35,7 @@ public class HumanController : MonoBehaviour
     public GameObject human;
     public GameObject capsule;
     public GameObject mask;
+    public GameObject maglietta;
     public HumanHealth hhL;
 
     void Start()
@@ -54,6 +55,7 @@ public class HumanController : MonoBehaviour
         human = GameObject.Find("Human");
         capsule = GameObject.Find("HumanDamage");
         mask = GameObject.Find("Maschera");
+        maglietta = GameObject.Find("Maglietta");
         hhL = GameObject.Find("Nemico").GetComponent<HumanHealth>();
 
     }
@@ -63,6 +65,7 @@ public class HumanController : MonoBehaviour
     {
 
         hhLDeteced = hhL.detected;
+        capsule.transform.position = new Vector3(maglietta.transform.position.x, 2.5f, maglietta.transform.position.z);
         if (Detected)
         {
 
@@ -92,7 +95,7 @@ public class HumanController : MonoBehaviour
                     myAnim.SetBool("attack", true);
 
                     myRB.velocity = new Vector3(0, myRB.velocity.y, 0);
-                    capsule.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
+                   // capsule.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
                     mask.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
 
 
@@ -102,7 +105,7 @@ public class HumanController : MonoBehaviour
                     Attack = false;
                     myAnim.SetBool("attack", false);
                     myRB.velocity = new Vector3(moveSpeed, myRB.velocity.y, 0);
-                    capsule.GetComponent<Rigidbody>().velocity = new Vector3(moveSpeed, myRB.velocity.y, 0);
+                   // capsule.GetComponent<Rigidbody>().velocity = new Vector3(moveSpeed, myRB.velocity.y, 0);
                     mask.GetComponent<Rigidbody>().velocity = new Vector3(moveSpeed, myRB.velocity.y, 0);
                 }
             }
@@ -115,7 +118,7 @@ public class HumanController : MonoBehaviour
                     Attack = true;
                     myAnim.SetBool("attack", true);
                     myRB.velocity = new Vector3(0, myRB.velocity.y, 0);
-                    capsule.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
+                   // capsule.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
                     mask.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
                 }
                 else
@@ -123,7 +126,7 @@ public class HumanController : MonoBehaviour
                     Attack = false;
                     myAnim.SetBool("attack", false);
                     myRB.velocity = new Vector3((moveSpeed * -1), myRB.velocity.y, 0);
-                    capsule.GetComponent<Rigidbody>().velocity = new Vector3((moveSpeed * -1), myRB.velocity.y, 0);
+                   // capsule.GetComponent<Rigidbody>().velocity = new Vector3((moveSpeed * -1), myRB.velocity.y, 0);
                     mask.GetComponent<Rigidbody>().velocity = new Vector3((moveSpeed * -1), myRB.velocity.y, 0);
                 }
             }
@@ -132,7 +135,7 @@ public class HumanController : MonoBehaviour
         {
             Attack = false;
             human.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            capsule.GetComponent<Rigidbody>().velocity = Vector3.zero;
+           // capsule.GetComponent<Rigidbody>().velocity = Vector3.zero;
             // myAnim.enabled = false;
             // myAnim.StopPlayback();
             myAnim.Play("Idle1");
