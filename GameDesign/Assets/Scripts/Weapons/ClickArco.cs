@@ -13,6 +13,7 @@ public class ClickArco : MonoBehaviour
     // Start is called before the first frame update
     public WeaponInventory wi;
     public Button button;
+    public GameObject faretra;
 
     public Animator myAnim;
 
@@ -20,6 +21,7 @@ public class ClickArco : MonoBehaviour
     {
         button = GameObject.Find("UIArco").GetComponent<Button>();
         myAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        faretra = MainManager.Instance.faretra;
     }
     public void FixedUpdate()
     {
@@ -48,6 +50,7 @@ public class ClickArco : MonoBehaviour
             wi.setWeaponActive(0);
             Debug.Log("DEACTIVATE ARCO");
             MainManager.Instance.currentWeapon = 0;
+            faretra.SetActive(false);
 
             myAnim.SetLayerWeight(3, 0);
             MainManager.Instance.animationLayer = 0;
@@ -58,10 +61,11 @@ public class ClickArco : MonoBehaviour
             wi.setWeaponActive(3);
             Debug.Log("ACTIVATE ARCO");
             MainManager.Instance.currentWeapon = 3;
-
+            faretra.SetActive(true);
            
             myAnim.SetLayerWeight(3, 1);
             MainManager.Instance.animationLayer = 3;
+
         }
     }
 

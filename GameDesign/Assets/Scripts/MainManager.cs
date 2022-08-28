@@ -56,6 +56,7 @@ public class MainManager : MonoBehaviour
     public TextMeshProUGUI arrowText;
     public TextMeshProUGUI xArrow;
     public Button arcoButton;
+    public GameObject faretra;
 
     public bool wingsActive;
     public GameObject wings;
@@ -127,6 +128,7 @@ public class MainManager : MonoBehaviour
         weapons.Add(arco);
         weaponAvailable.Add(false);
         weapons[3].SetActive(false);
+        faretra = GameObject.FindGameObjectWithTag("Faretra");
 
         wings = GameObject.FindGameObjectWithTag("Wings");
        // wings.SetActive(false);

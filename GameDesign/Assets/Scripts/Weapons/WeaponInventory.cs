@@ -241,9 +241,14 @@ public class WeaponInventory : MonoBehaviour
         Debug.Log("You have clicked the Arcobutton!");
 
         if (weapons[3].activeInHierarchy)
-        { setWeaponActive(0); }
+        { setWeaponActive(0);
+          //  faretra.setActive(false);
+        }
         else
+        {
             setWeaponActive(3);
+          //  faretra.setActive(true);
+        }
     }
 
 
