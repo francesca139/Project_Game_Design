@@ -41,7 +41,8 @@ public class HumanController : MonoBehaviour
     void Start()
     {
         myRB = GetComponentInParent<Rigidbody>();
-        myAnim = GetComponentInParent<Animator>();
+        //   myAnim = GetComponentInParent<Animator>();
+        myAnim = GameObject.Find("Nemico").GetComponent<Animator>();
 
         // enemyMovementAS = GetComponent<AudioSource>
 
@@ -56,7 +57,9 @@ public class HumanController : MonoBehaviour
         capsule = GameObject.Find("HumanDamage");
         mask = GameObject.Find("Maschera");
         maglietta = GameObject.Find("Maglietta");
-        hhL = GameObject.Find("Nemico").GetComponent<HumanHealth>();
+        hhL = GameObject.Find("HumanDamage").GetComponent<HumanHealth>();
+
+        hhLDeteced = hhL.detected;
 
     }
 
@@ -88,7 +91,7 @@ public class HumanController : MonoBehaviour
             if (!facingLeft)
             {
 
-                if (hhL.detected)
+                if (hhLDeteced)
                 {
 
                     Attack = true;
@@ -113,7 +116,7 @@ public class HumanController : MonoBehaviour
 
             else
             {
-                if (hhL.detected)
+                if (hhLDeteced)
                 {
                     Attack = true;
                     myAnim.SetBool("attack", true);

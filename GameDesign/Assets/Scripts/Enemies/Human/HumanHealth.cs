@@ -80,7 +80,7 @@ public class HumanHealth : MonoBehaviour
         while (detected)
         {
             yield return wait;
-            ph.TakeDamage(1f);
+            ph.TakeDamage(3.3f);
             Debug.Log("damage");
         }
     }

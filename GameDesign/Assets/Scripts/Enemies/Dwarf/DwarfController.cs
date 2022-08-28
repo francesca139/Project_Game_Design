@@ -33,14 +33,18 @@ public class DwarfController : MonoBehaviour
     public bool dhLDeteced;
 
 
+
     public GameObject dwarf;
-    public GameObject capsule;
+    public GameObject gnomo;
+    public GameObject damage;
+    public GameObject canvas;
+    public GameObject detection;
     public DwarfHealthLisa dhL;
 
     void Start()
     {
         myRB = GetComponentInParent<Rigidbody>();
-        myAnim = GetComponentInParent<Animator>();
+        myAnim = GameObject.Find("Gnomo").GetComponent<Animator>();
 
         // enemyMovementAS = GetComponent<AudioSource>
 
@@ -51,16 +55,29 @@ public class DwarfController : MonoBehaviour
 
 
         dwarf = GameObject.Find("Dwarf");
-        capsule = GameObject.Find("DwarfDamage");
-        dhL = GameObject.Find("Gnomo").GetComponent<DwarfHealthLisa>();
+        canvas = GameObject.Find("dwarfFloatingHUD");
+        detection = GameObject.Find("DwarfDetection");
+        gnomo = GameObject.Find("Gnomo");
+        damage = GameObject.Find("DwarfDamage");
+        dhL = GameObject.Find("DwarfDamage").GetComponent<DwarfHealthLisa>();
+        // player = GameObject.Find("ProtagonistaModel");
+        player = GameObject.FindGameObjectWithTag("Player");
 
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        Vector3 pos = player.transform.position;
+        pos.y = dwarf.transform.position.y;
+        pos.z = dwarf.transform.position.z;
 
+
+        damage.transform.position = new Vector3(gnomo.transform.position.x, 1.25f, gnomo.transform.position.z);
+        detection.transform.position = new Vector3(gnomo.transform.position.x, 4f, gnomo.transform.position.z);
+        canvas.transform.position = new Vector3(gnomo.transform.position.x, 3.5f, gnomo.transform.position.z);
         dhLDeteced = dhL.detected;
+
         if (Detected)
         {
 
@@ -89,17 +106,14 @@ public class DwarfController : MonoBehaviour
                     Attack = true;
                     myAnim.SetBool("attack", true);
 
-                    myRB.velocity = new Vector3(0, myRB.velocity.y, 0);
-                    capsule.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
-
-
                 }
                 else
                 {
+                   // myAnim.Play("Walking");
                     Attack = false;
                     myAnim.SetBool("attack", false);
-                    myRB.velocity = new Vector3(moveSpeed, myRB.velocity.y, 0);
-                    capsule.GetComponent<Rigidbody>().velocity = new Vector3(moveSpeed, myRB.velocity.y, 0);
+                    myAnim.SetBool("walking", true);
+                    gnomo.transform.position = Vector3.MoveTowards(gnomo.transform.position, pos, moveSpeed * Time.deltaTime);
                 }
             }
 
@@ -110,54 +124,23 @@ public class DwarfController : MonoBehaviour
                 {
                     Attack = true;
                     myAnim.SetBool("attack", true);
-                    myRB.velocity = new Vector3(0, myRB.velocity.y, 0);
-                    capsule.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
                 }
                 else
                 {
                     Attack = false;
                     myAnim.SetBool("attack", false);
-                    myRB.velocity = new Vector3((moveSpeed * -1), myRB.velocity.y, 0);
-                    capsule.GetComponent<Rigidbody>().velocity = new Vector3((moveSpeed * -1), myRB.velocity.y, 0);
+                    myAnim.SetBool("walking", true);
+                    gnomo.transform.position = Vector3.MoveTowards(gnomo.transform.position, pos, moveSpeed * Time.deltaTime);
                 }
             }
         }
         else
         {
             Attack = false;
-            dwarf.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            capsule.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            // myAnim.enabled = false;
-            // myAnim.StopPlayback();
+            myAnim.SetBool("walking", false);
+            gnomo.transform.position = gnomo.transform.position;
             myAnim.Play("Idle");
         }
-
-        /*
-        if (Detected)
-        {
-            Vector3 pos = player.transform.position;
-            pos.y = dwarf.transform.position.y;
-            float distance = transform.position.x - player.transform.position.x;
-
-            if (distance < 0 && facingLeft)
-                Flip();
-            if (distance > 0 && !facingLeft)
-                Flip();
-
-            dwarf.transform.position = Vector3.MoveTowards(dwarf.transform.position, pos, runSpeed * Time.deltaTime);
-            capsule.transform.position = Vector3.MoveTowards(dwarf.transform.position, pos, runSpeed * Time.deltaTime);
-
-            Vector3 posSlider = pos;
-            posSlider.y = slider.transform.position.y;
-            slider.transform.position = Vector3.MoveTowards(slider.transform.position, posSlider, runSpeed * Time.deltaTime);
-            
-        }
-        else
-        {
-            capsule.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        }
-
-        */
     }
 
     private void OnTriggerEnter(Collider other)

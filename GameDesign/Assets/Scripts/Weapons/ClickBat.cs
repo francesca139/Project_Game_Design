@@ -13,6 +13,7 @@ public class ClickBat : MonoBehaviour
 
     public WeaponInventory wi;
     public int currentWeapon;
+    public bool active;
 
     Button button;
 
@@ -20,30 +21,40 @@ public class ClickBat : MonoBehaviour
     {
         button = GameObject.Find("UIMazza").GetComponent<Button>();
         myAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        active = false;
     }
 
     public void FixedUpdate()
     {
-            wi = GameObject.FindObjectOfType<WeaponInventory>();
+        wi = GameObject.FindObjectOfType<WeaponInventory>();
 
-            ColorBlock cb = button.colors;
+        ColorBlock cb = button.colors;
 
-            if (MainManager.Instance.currentWeapon == 1)
-            {
-                cb.colorMultiplier = 5;
-                button.colors = cb;
+        if (MainManager.Instance.currentWeapon == 1)
+        {
+            cb.colorMultiplier = 5;
+            button.colors = cb;
 
         }
         else
-            {
-                cb.colorMultiplier = 1;
-                button.colors = cb;
+        {
+            cb.colorMultiplier = 1;
+            button.colors = cb;
 
         }
 
     }
+
+    public void Update()
+    {
+        if (active)
+        {
+            if (Input.GetMouseButtonDown(0))
+                Debug.Log("Colpisci");
+        }
+    }
     public void TaskOnClickBat()
-    {   
+    {
         Debug.Log("CLICKED THE BAR BUTTON");
 
         if (wi.weapons[1].activeInHierarchy)
@@ -52,9 +63,11 @@ public class ClickBat : MonoBehaviour
             Debug.Log("DEACTIVATE BAT");
             MainManager.Instance.currentWeapon = 0;
 
-           // myAnim.SetLayerWeight(1, 1);
+            // myAnim.SetLayerWeight(1, 1);
             myAnim.SetLayerWeight(1, 0);
             MainManager.Instance.animationLayer = 0;
+
+            active = false;
 
         }
         else
@@ -65,6 +78,8 @@ public class ClickBat : MonoBehaviour
 
             myAnim.SetLayerWeight(1, 1);
             MainManager.Instance.animationLayer = 1;
+
+            active = true;
 
         }
     }

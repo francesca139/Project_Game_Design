@@ -68,7 +68,7 @@ public class DwarfHealthLisa : MonoBehaviour
 
     private IEnumerator DamagePlayer(PlayerHealthLisa ph)
     {
-        var wait = new WaitForSeconds(1);
+        var wait = new WaitForSeconds(2.1f);
 
         while (detected)
         {

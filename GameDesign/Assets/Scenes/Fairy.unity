@@ -21630,7 +21630,10 @@ MonoBehaviour:
   Detected: 0
   dhLDeteced: 0
   dwarf: {fileID: 0}
-  capsule: {fileID: 0}
+  gnomo: {fileID: 0}
+  damage: {fileID: 0}
+  canvas: {fileID: 0}
+  detection: {fileID: 0}
   dhL: {fileID: 0}
 --- !u!1001 &641705915
 PrefabInstance:
@@ -59184,8 +59187,8 @@ MonoBehaviour:
   ph: {fileID: 0}
   detected: 0
   first: 0
-  enemyHb: {fileID: 0}
-  elixirPrefab: {fileID: 0}
+  enemyHb: {fileID: 311755036}
+  elixirPrefab: {fileID: 13667003055227987, guid: 07341dd025f6cc442ad849f42967c9b4, type: 3}
 --- !u!54 &1922708871
 Rigidbody:
   m_ObjectHideFlags: 0
