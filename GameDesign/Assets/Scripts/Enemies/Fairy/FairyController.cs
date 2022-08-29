@@ -24,7 +24,7 @@ public class FairyController : MonoBehaviour
 
     private bool facingRight = false;
 
-    public Animator myAnim;
+    private Animator myAnim;
     Transform detectedPlayer;
 
     public GameObject sporePrefab;
@@ -154,6 +154,7 @@ public class FairyController : MonoBehaviour
     {
         Transform.localPosition = Vector3.MoveTowards(Transform.localPosition, nextPosition, moveSpeed * Time.deltaTime);
         canvasSlider.transform.position = Vector3.MoveTowards(canvasSlider.transform.localPosition, nextPosition, moveSpeed * Time.deltaTime);
+       
 
         if (Vector3.Distance(Transform.localPosition, nextPosition) <= 0.1)
         {
