@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
             myAnim.SetBool("grounded", grounded);
             myRB.AddForce(new Vector3(0, jumpHeight, 0));
 	    soundManager = FindObjectOfType<SoundManager>();
-	    //soundManager.SeleccionAudio(3,0.5f);
+	    soundManager.SeleccionAudio(3,0.5f);
 	    
         }
 
@@ -112,6 +112,6 @@ public class PlayerController : MonoBehaviour
         theScale.z *= -1;
         transform.localScale = theScale;
 	    soundManager = FindObjectOfType<SoundManager>();
-	    soundManager.SeleccionAudio(2,0.5f);
+	    soundManager.SeleccionAudio(2,0.2f);
     }
 }
