@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight;
 
     //Sound
-    private AudioManager audioManager;
+    private SoundManager soundManager;
 
     private static bool exists;  //da usare per i portali
 
@@ -50,10 +50,18 @@ public class PlayerController : MonoBehaviour
             grounded = false;
             myAnim.SetBool("grounded", grounded);
             myRB.AddForce(new Vector3(0, jumpHeight, 0));
+	    soundManager = FindObjectOfType<SoundManager>();
+	    //soundManager.SeleccionAudio(3,0.5f);
+	    
         }
 
+		
+	   
+	
         groundCollisions = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
-        if (groundCollisions.Length > 0) grounded = true;
+        if (groundCollisions.Length > 0) {
+		grounded = true;
+	}
         else grounded = false;
 
         myAnim.SetBool("grounded", grounded);
@@ -89,6 +97,7 @@ public class PlayerController : MonoBehaviour
         {
             Flip();
 
+
         }
         else if (move < 0 && facingRight)
         {
@@ -102,5 +111,7 @@ public class PlayerController : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.z *= -1;
         transform.localScale = theScale;
+	    soundManager = FindObjectOfType<SoundManager>();
+	    soundManager.SeleccionAudio(2,0.5f);
     }
 }

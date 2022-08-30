@@ -47,6 +47,9 @@ public class MoveAndFly : MonoBehaviour
     public Coroutine coD = null;
     public Coroutine coI = null;
 
+    //Sound variables
+    private SoundManager soundmanager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,12 +59,14 @@ public class MoveAndFly : MonoBehaviour
 
         this.fullSlider = MainManager.Instance.fullFlight;
         this.actualSlider = MainManager.Instance.currentFlight;
-
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+
+
         if (SceneManager.GetActiveScene().name == "Fairy") 
             this.flightSlider = MainManager.Instance.flightSlider;
 
@@ -133,6 +138,12 @@ public class MoveAndFly : MonoBehaviour
             doublePressed = false;
 
             timeInair = 0;
+		
+		//suono
+	    //var audioSource = GetComponent<AudioSource>();
+	    //audioSource.Play();
+	    soundmanager = FindObjectOfType<SoundManager>();
+	    soundmanager.SeleccionAudio(1,0.5f);
 
         }
         else
@@ -165,6 +176,9 @@ public class MoveAndFly : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.z *= -1;
         transform.localScale = theScale;
+	 soundmanager = FindObjectOfType<SoundManager>();
+	soundmanager.SeleccionAudio(2,1f);
+
     }
 
 
