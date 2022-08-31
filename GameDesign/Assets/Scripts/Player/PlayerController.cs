@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
         myAnim = GetComponent<Animator>();
         facingRight = true;
 
+        soundManager = FindObjectOfType<SoundManager>();
+	    soundManager.SeleccionAudio(4,0.5f);
+
         if (!exists)
         {
             exists = true;

@@ -14,6 +14,10 @@ public class PortalTeleporter : MonoBehaviour
     public float nextPortalY;
     public float nextPortalZ;
    
+
+   private SoundManager soundManager;
+   public int song = 4;
+
     GameObject go;
     Transform targetPosition;
 
@@ -51,6 +55,15 @@ public class PortalTeleporter : MonoBehaviour
         SceneManager.UnloadSceneAsync(currentScene);
         int index = SceneManager.GetActiveScene().buildIndex;
         Debug.Log("You are currently in scene " + index);
+
+
+        if(song == 4){
+            song = 5;
+        }else{
+            song = 4;
+        }
+        soundManager = FindObjectOfType<SoundManager>();
+	    soundManager.SeleccionAudio(song,0.5f);
 
 
     }
