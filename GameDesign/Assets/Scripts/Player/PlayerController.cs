@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.z *= -1;
         transform.localScale = theScale;
-	    soundManager = FindObjectOfType<SoundManager>();
-	    soundManager.SeleccionAudio(2,0.2f);
+	    //soundManager = FindObjectOfType<SoundManager>();
+	    //soundManager.SeleccionAudio(2,0.2f);
     }
 }
