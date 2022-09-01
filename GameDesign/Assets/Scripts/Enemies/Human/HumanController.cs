@@ -97,7 +97,7 @@ public class HumanController : MonoBehaviour
                     Attack = true;
                     myAnim.SetBool("attack", true);
 
-                    myRB.velocity = new Vector3(0, myRB.velocity.y, 0);
+                    myRB.velocity = new Vector3(0, 0, 0);
                    // capsule.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
                     mask.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
 
@@ -120,7 +120,7 @@ public class HumanController : MonoBehaviour
                 {
                     Attack = true;
                     myAnim.SetBool("attack", true);
-                    myRB.velocity = new Vector3(0, myRB.velocity.y, 0);
+                    myRB.velocity = new Vector3(0, 0, 0);
                    // capsule.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
                     mask.GetComponent<Rigidbody>().velocity = new Vector3(0, myRB.velocity.y, 0);
                 }
