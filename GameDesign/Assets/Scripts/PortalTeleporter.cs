@@ -13,32 +13,59 @@ public class PortalTeleporter : MonoBehaviour
     public float nextPortalX;
     public float nextPortalY;
     public float nextPortalZ;
+    public bool canPass;
    
 
    private SoundManager soundManager;
    public int song = 4;
 
+    public GameObject pl;
+    public GameObject mc;
+    public GameObject fc;
     GameObject go;
-    Transform targetPosition;
+    public Transform targetPosition;
 
 
     // bool load;
 
-    void Update(Collider other)
+    /*   public void FixedUpdate()
+       // void Update(Collider other)
+       {
+           if (Input.GetButtonDown("Jump"))
+           {
+               StartCoroutine(LoadScene());
+           }
+       }  */
+
+    public void FixedUpdate()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (canPass)
         {
-            StartCoroutine(LoadScene());
+            if (Input.GetButtonDown("Jump"))
+            {
+                StartCoroutine(LoadScene());
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        go = other.gameObject;
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !canPass)
         {
-            targetPosition = other.transform;
-                
+            pl = other.gameObject;
+            //  fc = GameObject.Find("FlyCollider");
+            mc = GameObject.Find("MainCharacter");
+            targetPosition = pl.transform;
+            canPass = true;
+
+        } 
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            canPass = false;
         }
     }
 
@@ -51,7 +78,7 @@ public class PortalTeleporter : MonoBehaviour
         SceneManager.LoadScene(nextSceneString, LoadSceneMode.Single);
 
         targetPosition.position = new Vector3(nextPortalX, nextPortalY, nextPortalZ);
-
+        mc.transform.position = new Vector3(nextPortalX, nextPortalY + 0.7f, nextPortalZ);
         {
             yield return null;
         }

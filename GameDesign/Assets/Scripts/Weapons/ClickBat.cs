@@ -63,7 +63,7 @@ public class ClickBat : MonoBehaviour
             Debug.Log("DEACTIVATE BAT");
             MainManager.Instance.currentWeapon = 0;
 
-            // myAnim.SetLayerWeight(1, 1);
+             myAnim.SetLayerWeight(1, 1);
             myAnim.SetLayerWeight(1, 0);
             MainManager.Instance.animationLayer = 0;
 

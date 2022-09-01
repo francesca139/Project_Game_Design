@@ -36,10 +36,12 @@ public class WeaponInventory : MonoBehaviour
     public TextMeshProUGUI arrowText;
     public TextMeshProUGUI xArrow;
     public Button arcoButton;
-
+    public GameObject faretra;
 
     public bool wingsActive;
     public GameObject wings;
+
+
 
 
     void Start()
@@ -122,6 +124,14 @@ public class WeaponInventory : MonoBehaviour
         arrowImage = MainManager.Instance.arrowImage;
         arrowText = MainManager.Instance.arrowText;
         xArrow = MainManager.Instance.xArrow;
+
+        faretra = MainManager.Instance.faretra;
+        if (MainManager.Instance.currentWeapon == 3)
+        {
+            faretra.SetActive(true);
+        }
+        else
+          faretra.SetActive(false);
 
         wings = MainManager.Instance.wings;
         wingsActive = MainManager.Instance.wingsActive;

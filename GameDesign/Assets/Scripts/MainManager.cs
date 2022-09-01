@@ -102,6 +102,7 @@ public class MainManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+
         //___________________________________________________________________________________________________________
         //AGGIUNGERE TUTTE LE ARMI SULLA MANO DEL PERSONAGGIO ALL'INIZIO E TAGGARLE
         //le armi che si trovano nella scena invece non vanno taggate ma basta il nome per il confronto
@@ -151,7 +152,7 @@ public class MainManager : MonoBehaviour
 
         typeProiettile = 0;
 
-        animationLayer = 1;
+        animationLayer = 0;
 
         
     }

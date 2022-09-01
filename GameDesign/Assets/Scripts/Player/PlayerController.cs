@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         soundManager = FindObjectOfType<SoundManager>();
 	    soundManager.SeleccionAudio(4,0.5f);
 
-        if (!exists)
+    /*    if (!exists)
         {
             exists = true;
            // DontDestroyOnLoad(transform.gameObject);
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }   //aggiunto per il passaggio tra i mondi  
+        }   //aggiunto per il passaggio tra i mondi  */
     }
 
     // Update is called once per frame
