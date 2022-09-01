@@ -24,20 +24,23 @@ public class PortalTeleporter : MonoBehaviour
 
     // bool load;
 
+    void Update(Collider other)
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            StartCoroutine(LoadScene());
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        
         go = other.gameObject;
-
         if (other.gameObject.tag == "Player")
         {
             targetPosition = other.transform;
-            StartCoroutine(LoadScene()); 
+                
         }
-
-
     }
-
 
     IEnumerator LoadScene()
     {
